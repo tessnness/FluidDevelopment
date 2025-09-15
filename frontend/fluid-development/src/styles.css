@@ -1,1 +1,18 @@
 @import "primeicons/primeicons.css";
+
+html, body
+{
+	background-color: transparent;
+	margin: 0px;
+	padding: 0px;
+}
+
+@layer app {
+    .my-menubar { 
+        background-color: transparent !important;
+        width: 500px !important;
+        display: flex;
+        align-items: end !important;
+     } 
+  }
+  
