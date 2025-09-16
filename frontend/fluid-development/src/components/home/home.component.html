@@ -1,11 +1,32 @@
 <section>
   <div style="position: relative; width: 100%;">
-    <div class="card" style="z-index: 2">
+    <!-- <div class="card" style="z-index: 2">
       <p-menubar [model]="items" styleClass="my-menubar"></p-menubar>
+    </div> -->
+    <div class="box" style="z-index: 2; display: flex; justify-content: center; align-items: center; ">
+      <div>
+        <img src="assets/img/beyonce.png" style="width: 100px; height: 50px;">
+      </div>
+      <div style="margin-left: auto; display: flex; gap: 30px; margin-right: 30px;">
+        <a routerLink="/" class="menu-item">Acasa</a>
+        <a routerLink="/about" class="menu-item">Despre</a>
+        <span>
+          <a routerLink="/projects" class="menu-item">Proiecte</a>
+          <a (click)="openProjects = !openProjects" style="cursor: pointer;" class="material-symbols">arrow_drop_down</a>
+          @if(openProjects){
+            <ul class="dropdown-menu" role="menu">
+              <li routerLink="/projects" [queryParams]="{ status: 'in-progress' }" class="project-link">In progress</li>
+              <li routerLink="/projects" [queryParams]="{ status: 'done' }" class="project-link">Incheiate</li>
+            </ul>
+          }
+          
+        </span>
+        <a routerLink="/contact" class="menu-item">Contact</a>
+        <!-- routerLink="/account/my-tag" [queryParams]="{ id: item.id }" -->
+      </div>
     </div>
     <div style="z-index: 1;">
-      <img src="assets/img/fluid-hero.png" alt="hero-image"
-        style="width: 100%; object-fit: cover; top: 0; right: 0;">
+      <img src="assets/img/fluid-hero.png" alt="hero-image" style="width: 100%; object-fit: cover; top: 0; right: 0;">
     </div>
   </div>
 </section>
@@ -13,14 +34,17 @@
 <section style="color: blue; ">
   <h1>Despre noi</h1>
   <div style="margin: 10px;">
-    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.
+    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla
+    lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel
+    class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
   </div>
- 
+
 
 
 </section>
 
-<section style="background-color: #bdf1fc; height: 200px;"> 
+<section style="background-color: #bdf1fc; height: 200px;">
   <h1>Proiectele noastre</h1>
   <div></div>
 </section>

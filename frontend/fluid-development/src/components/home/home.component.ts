@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { MenubarModule, Menubar } from 'primeng/menubar';
+import { RouterModule } from "@angular/router";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   standalone: true,
-  imports: [Menubar]
+  imports: [RouterModule]
 })
 export class HomeComponent implements OnInit {
 
-  items: MenuItem[] | undefined
+  items: MenuItem[] | undefined;
+  openProjects: boolean | undefined;
   constructor() { }
 
   ngOnInit() {
