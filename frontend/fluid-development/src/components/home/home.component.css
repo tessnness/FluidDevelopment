@@ -1,24 +1,57 @@
 .menu-item {
     color: black;
+    font-weight: bold;
     text-decoration: none;
+
 }
 
-.project-link{
+.menu-item:hover {
+    color: #2295AA;
+}
+
+.project-link {
     cursor: pointer;
 }
 
-.project-link :hover{
-    
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
+.dropdown-trigger {
+    cursor: pointer;
+    padding: 0 4px;
+    vertical-align: middle;
+
+}
+
+
 .dropdown-menu {
+    display: none;
     position: absolute;
-    top: 100%;
-    min-width: 160px;
-    padding: 5px;
+    top: 70%;
+    min-width: 150px;
+    padding: 10px;
     margin: 2px 0 0;
     list-style: none;
     background-color: #fff;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175)
-  }
+    border-radius: 3px;
+    line-height: 1.75;
+    font-weight: bold;
+}
+
+.dropdown-trigger:hover+.dropdown-menu,
+.dropdown-menu:hover {
+    color: #2295AA;
+    display: block;
+}
+
+.dropdown-menu li {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f2f2f2;
+    border-radius: 3px;
+}
