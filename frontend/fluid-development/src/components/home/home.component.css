@@ -1,4 +1,9 @@
-/* color: #2295AA */
+.menu-parent {
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+    margin-right: var(--space-6);
+}
 
 .menu-item {
     font-size: var(--fs-h3);
@@ -10,11 +15,6 @@
 .menu-item:hover {
     color: var(--color-text);
 }
-
-
-/* color: #565a5c
-color: #000000 */
-
 
 
 .project-link {
@@ -30,7 +30,7 @@ color: #000000 */
 
 .dropdown-trigger {
     cursor: pointer;
-    padding: 0 4px;
+    padding: 0 0 0 var(--space-1);
     vertical-align: middle;
     color: var(--color-text-muted);
 
@@ -46,12 +46,12 @@ color: #000000 */
     display: none;
     position: absolute;
     top: 70%;
-    min-width: 150px;
-    padding: 10px;
-    margin: 2px 0 0;
+    min-width: 200px;
+    padding: var(--space-2);
+    margin: var(--space-1) 0 0;
     list-style: none;
     background-color: #fff;
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
     line-height: 1.75;
     font-weight: 700;
 }
@@ -63,14 +63,18 @@ color: #000000 */
 
 .dropdown-menu li {
     cursor: pointer;
-    padding: 5px;
+    padding: var(--space-4);
     color: var(--color-text-muted);
 }
 
 .dropdown-menu li:hover {
     background: var(--color-accent);
     color: var(--color-text);
-    border-radius: 3px;
+    border-radius: var(--radius-sm);
+}
+
+.about-section {
+    padding: var(--space-6);
 }
 
 
@@ -79,9 +83,9 @@ color: #000000 */
     flex-wrap: nowrap;
     overflow-x: auto;
     scrollbar-width: thin;
-    scrollbar-color: #0000001a #f1f1f1;
+    scrollbar-color: var(--color-horizontal-scrollbar) var(--color-horizontal-scrollbar-background);
     gap: 10px;
-    margin-top: 20px;
+    margin-top: var(--space-4);
 }
 
 .carousel-parent::-webkit-scrollbar {
@@ -89,13 +93,13 @@ color: #000000 */
 }
 
 .carousel-parent::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 4px;
+    background: var(--color-horizontal-scrollbar-background);
+    border-radius: var(--radius-sm);
 }
 
 .carousel-parent::-webkit-scrollbar-thumb {
-    background: #0000001a;
-    border-radius: 4px;
+    background: var(--color-horizontal-scrollbar);
+    border-radius: var(--radius-sm);
 }
 
 .carousel-parent::-webkit-scrollbar-thumb:hover {
@@ -109,14 +113,14 @@ color: #000000 */
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 3px;
-    padding: 10px;
+    border-radius: var(--radius-sm);
+    padding: var(--space-2);
     width: 275px;
     height: 275px;
     /* flex-wrap: wrap; */
     position: relative;
     overflow: hidden;
-    margin: 10px;
+    margin: var(--space-3);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 }
@@ -137,7 +141,7 @@ h1>span {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 200px;
-    color: #0000001a;
+    color: var(--color-horizontal-scrollbar);
     pointer-events: none;
     z-index: 0;
 }

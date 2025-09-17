@@ -1,22 +1,46 @@
 # UI Style Guide
 
 ## 1) Brand
-- **Primary**: `#2295AA`
+- **Primary/Fluid**: `#2295AA`
 - **Primary (hover)**: `#1A6F7F`
-- **Accent**: `#60A5FA`
-- **Text**: `#0F172A`
+- **Accent**: `#E8F4F6`
+- **Text**: `#1F2937`
+- **Text Muted**: `#6B7280`
+- **Heading**: `#111827`
 - **Background**: `#FFFFFF`
+- **Horizontal Scrollbar**: `#0000001A`
+- **Horizontal Scrollbar Background**: `#F1F1F1`
+
+- **Spaces**:  
+  - Size 1: `4px`  
+  - Size 2: `8px`  
+  - Size 3: `12px`  
+  - Size 4: `16px`  
+  - Size 6: `24px`  
+
+- **Border radius**:  
+  - Size 1: `4px`  
+  - Size 2: `8px`  
+
+
 
 > Source of truth: `src/styles/tokens.css`
 
 ## 2) Typography
-- **Font family**: Montserrat (self-hosted)
-- **Scale**:
-  - Base: 16px
-  - h1: 32px / 700
-  - h2: 24px / 600
-  - h3: 20px / 600
-- Usage example:
-  ```css
-  body { font-family: var(--font-sans); }
-  h1 { font-size: var(--fs-700); }
+- **Font family**: Montserrat (self-hosted), sans-serif
+- **Base text**:  
+  - Size: `18px`  
+  - Color: `#1F2937`  
+  - Line-height: `1.6`
+
+- **Headings**:  
+  - **H1**: 36px / bold / `#111827`  
+  - **H2**: 28px / bold / `#111827`  
+  - **H3**: 22px / bold / `#111827`
+
+- **Muted text**:  
+  - Size: `14px`  
+  - Color: `#6B7280`
+
+
+

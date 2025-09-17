@@ -5,8 +5,12 @@
         --color-heading: #111827;
         --color-accent: #e8f4f6;
 
-        --color-primary: #2295AA;
-        --color-primary-600: #1A6F7F;
+        --color-horizontal-scrollbar: #0000001a;
+        --color-horizontal-scrollbar-background: #f1f1f1;
+        --color-fluid: #2295AA;
+        --color-fluid-600: #1A6F7F;
+
+
 
         --fs-base: 18px;
         --fs-small: 14px;
@@ -15,37 +19,48 @@
         --fs-h3: 22px;
 
         --font-sans: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+        --space-1: 4px;
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-6: 24px;
+
+        --radius-sm: 4px;
+        --radius-md: 8px;
+
+        .text-muted {
+            color: var(--color-text-muted);
+            font-size: var(--fs-small);
+        }
+
+        .link-muted {
+            color: var(--color-text-muted);
+            text-decoration: none;
+        }
+
+        .link-muted:hover {
+            color: var(--color-primary);
+        }
+
+        .section-pad {
+            padding: 20px;
+        }
+
+        .section-pad-soft {
+            padding: 20px;
+            /* background: #bdf1fc; */
+        }
+
+        .section-tall-dark {
+            height: 500px;
+            background: #000;
+        }
+
+        .mt-2 {
+            margin-top: 10px;
+        }
     }
 
-    .text-muted {
-        color: var(--color-text-muted);
-        font-size: var(--fs-small);
-    }
 
-    .link-muted {
-        color: var(--color-text-muted);
-        text-decoration: none;
-    }
-
-    .link-muted:hover {
-        color: var(--color-primary);
-    }
-
-    .section-pad {
-        padding: 20px;
-    }
-
-    .section-pad-soft {
-        padding: 20px;
-        /* background: #bdf1fc; */
-    }
-
-    .section-tall-dark {
-        height: 500px;
-        background: #000;
-    }
-
-    .mt-2 {
-        margin-top: 10px;
-    }
 }
