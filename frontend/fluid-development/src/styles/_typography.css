@@ -1,0 +1,38 @@
+@layer app {
+    body {
+        font-family: var(--font-sans);
+        font-size: var(--fs-base);
+        line-height: 1.6;
+        color: var(--color-text);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-sans);
+        font-weight: 700;
+        margin: 18px 0;
+        color: var(--color-heading);
+        line-height: 1.2;
+    }
+
+    h1 {
+        font-size: var(--fs-h1);
+    }
+
+    h2 {
+        font-size: var(--fs-h2);
+    }
+
+    h3 {
+        font-size: var(--fs-h3);
+    }
+
+    .text-muted {
+        color: var(--color-text-muted);
+        font-size: var(--fs-small);
+    }
+}

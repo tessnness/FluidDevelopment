@@ -8,25 +8,20 @@
         <img src="assets/img/beyonce.png" style="width: 100px; height: 50px;">
       </div>
       <div style="margin-left: auto; display: flex; gap: 20px; margin-right: 20px;">
-        <a routerLink="/" class="menu-item">
-          <h3>ACASǍ</h3>
+        <a routerLink="/" class="menu-item">ACASǍ
         </a>
-        <a routerLink="/about" class="menu-item">
-          <h3>DESPRE</h3>
+        <a routerLink="/about" class="menu-item">DESPRE
         </a>
-        <a style="margin: 18px 0;" class="dropdown">
-          <a routerLink="/projects" class="menu-item">
-            <h3 style="display:inline;">PROIECTE</h3>
-          </a>
+        <div class="dropdown">
+          <a routerLink="/projects" class="menu-item">PROIECTE</a>
           <span class="dropdown-trigger material-symbols">arrow_drop_down</span>
           <ul class="dropdown-menu" role="menu">
             <li routerLink="/projects" [queryParams]="{ status: 'in-progress' }" class="project-link">In progress</li>
             <li routerLink="/projects" [queryParams]="{ status: 'done' }" class="project-link">Incheiate</li>
           </ul>
 
-        </a>
-        <a routerLink="/contact" class="menu-item">
-          <h3>CONTACT</h3>
+        </div>
+        <a routerLink="/contact" class="menu-item">CONTACT
         </a>
         <!-- routerLink="/account/my-tag" [queryParams]="{ id: item.id }" -->
       </div>
@@ -37,7 +32,7 @@
   </div>
 </section>
 
-<section style="padding: 20px;">
+<section class="section-pad" style="padding: 20px;">
   <h1>Despre noi</h1>
 
 
@@ -56,10 +51,10 @@
       <span class="material-symbols foundation background-icon">map_search</span>
 
       <div>
-        <h2>Orase in care am dezvoltat proiecte in</h2>
+        <h2>Prezenti in</h2>
       </div>
       <div>
-        <h1><span [countUp]="9" [options]="countOpts">0</span></h1>
+        <h1><span [countUp]="9" [options]="countOpts">0</span> orase</h1>
       </div>
     </div>
 
@@ -86,18 +81,29 @@
       </div>
     </div>
 
+    <div class="carousel-item">
+      <span class="material-symbols foundation background-icon">diversity_3</span>
+
+      <div>
+        <h2>Echipa de peste</h2>
+      </div>
+      <div>
+        <h1><span [countUp]="55" [options]="countOpts">0</span> angajati</h1>
+      </div>
+    </div>
+
   </div>
 
-  <div style="margin-top: 10px;">
+  <div class="mt-2 text-muted">
     Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.
-    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
+    In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
     <br><br>
     Pulvinar vivamus fringilla
     lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel
     class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
   </div>
-  <div style="margin-top: 10px;">
-    <a routerLink="/about" style="color: #565a5c; text-decoration: none;">Vezi mai mult <span class="material-symbols">arrow_forward</span></a>
+  <div class="mt-2">
+    <a routerLink="/about" class="link-muted">Vezi mai mult <span class="material-symbols">arrow_forward</span></a>
 
   </div>
 
@@ -105,13 +111,13 @@
 
 </section>
 
-<section style="background-color: #bdf1fc; height: 200px;">
+<section class="section-pad-soft">
   <h1>Proiectele noastre</h1>
   <div></div>
 </section>
 
-<section>
+<section class="section-pad">
   <h1>Contacteaza-ne</h1>
 </section>
 
-<section style="height: 500px; background-color: black;"></section>
+<section class="section-tall-dark"></section>

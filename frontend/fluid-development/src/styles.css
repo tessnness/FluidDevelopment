@@ -1,4 +1,10 @@
 @import "primeicons/primeicons.css";
+@import "@fontsource-variable/montserrat/index.css";
+@import "./styles/tokens.css";
+@import "./styles/_typography.css";
+
+
+:root { --font-sans: "MontserratVariable", system-ui, sans-serif; }
 
 html,
 body {
@@ -10,7 +16,8 @@ body {
 
 body {
     overflow-x: hidden;
-  overflow-y: auto;
+    overflow-y: auto;
+    font-family: var(--font-sans);
 }
 
 .box {
@@ -18,17 +25,16 @@ body {
     padding: 10px;
     border-radius: 3px;
     background: #ffffff;
-    /* margin-bottom: 20px; */
     width: 100%;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .material-symbols {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 700,
-  'GRAD' 0,
-  'opsz' 48
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 700,
+        'GRAD' 0,
+        'opsz' 48
 }
 
 @layer app {
@@ -39,4 +45,3 @@ body {
         align-items: end !important;
     }
 }
-
