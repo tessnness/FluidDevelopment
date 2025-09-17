@@ -1,3 +1,5 @@
+/* color: #2295AA */
+
 .menu-item {
     color: #565a5c;
     font-weight: bold;
@@ -61,7 +63,88 @@ color: #000000 */
 }
 
 .dropdown-menu li:hover {
-    background-color: #d2e9ee;
-    color: #000000; 
+    background-color: #e8f4f6;
+    color: #000000;
     border-radius: 3px;
+}
+
+
+.carousel-parent {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.carousel-parent::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .carousel-parent::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  .carousel-parent::-webkit-scrollbar-thumb {
+    background: #0000001a;   
+    border-radius: 4px;
+  }
+  
+  .carousel-parent::-webkit-scrollbar-thumb:hover {
+    background: #565a5c;   
+  }
+  
+
+.carousel-item {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 0.5px solid #565a5c; */
+    border-radius: 3px;
+    padding: 10px;
+    width: 250px;
+    height: 250px;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+h1>span {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+
+.carousel-item:hover {
+    background-color: #e8f4f6;
+}
+
+.background-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 200px;
+    color: #0000001a;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* .carousel-item > div {
+    position: relative;
+    z-index: 0;
+} */
+
+.material-symbols.foundation {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 200,
+        'GRAD' 0,
+        'opsz' 48
 }

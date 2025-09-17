@@ -25,6 +25,7 @@
     "@primeng/themes": "^19.1.4",
     "express": "^4.18.2",
     "material-symbols": "^0.35.1",
+    "ngx-countup": "^13.2.0",
     "primeicons": "^7.0.0",
     "primeng": "^19.1.4",
     "rxjs": "~7.8.0",
