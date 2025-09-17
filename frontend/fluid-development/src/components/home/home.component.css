@@ -1,12 +1,15 @@
 .menu-item {
-    color: black;
+    color: #565a5c;
     font-weight: bold;
     text-decoration: none;
 
 }
 
+/* color: #565a5c
+color: #000000 */
+
 .menu-item:hover {
-    color: #2295AA;
+    color: #000000;
 }
 
 .project-link {
@@ -22,6 +25,12 @@
     cursor: pointer;
     padding: 0 4px;
     vertical-align: middle;
+    color: #565a5c;
+
+}
+
+.dropdown-trigger:hover {
+    color: #000000;
 
 }
 
@@ -42,7 +51,7 @@
 
 .dropdown-trigger:hover+.dropdown-menu,
 .dropdown-menu:hover {
-    color: #2295AA;
+    color: #565a5c;
     display: block;
 }
 
@@ -52,6 +61,7 @@
 }
 
 .dropdown-menu li:hover {
-    background-color: #f2f2f2;
+    background-color: #d2e9ee;
+    color: #000000; 
     border-radius: 3px;
 }
