@@ -7,9 +7,10 @@
 - **Text**: `#1F2937`
 - **Text Muted**: `#6B7280`
 - **Heading**: `#111827`
-- **Background**: `#FFFFFF`
+- **White Text**: `#FFFFFF`
 - **Horizontal Scrollbar**: `#0000001A`
 - **Horizontal Scrollbar Background**: `#F1F1F1`
+- **Horizontal Scrollbar**: `#0000001A`
 
 - **Spaces**:  
   - Size 1: `4px`  
