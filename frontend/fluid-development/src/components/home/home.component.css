@@ -221,7 +221,7 @@ body {
 }
 
 .about-section > header { flex: 0 0 auto; }
-.about-section > main   { 
+.about-section > footer   { 
   flex: 1 0 auto;           /* fills the remaining height */
   display: flex;            /* NOT grid */
   align-items: center;      /* vertical centering of the carousel row */

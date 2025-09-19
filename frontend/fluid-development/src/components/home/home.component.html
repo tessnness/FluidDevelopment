@@ -46,12 +46,13 @@
 
 
 
-  <footer class="carousel-parent">
+  <main class="carousel-parent">
     <div class="carousel-item">
       <div class="material-symbols icon">home</div>
       <div style="height: 30%;">
         <h2>FONDAT IN</h2>
-        <h2 style="text-align: center;"><span style="display: inline-block;" [countUp]="2000" [options]="countOpts">0</span></h2>
+        <h2 style="text-align: center;"><span style="display: inline-block;" [countUp]="2000"
+            [options]="countOpts">0</span></h2>
 
       </div>
     </div>
@@ -102,15 +103,26 @@
     </div>
 
 
-  </footer>
-
-  <main class="mt-2 text-muted">
-    Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla lacus nec metus bibendum egestas iaculis massa nisl malesuada lacinia integer nunc posuere ut hendrerit semper vel class aptent taciti sociosqu ad litora torquent per conubia nostra 
-    <br><br>
-    inceptos himenaeos orci varius natoque penatibus et magnis dis parturient montes nascetur ridiculus mus donec rhoncus eros lobortis nulla molestie mattis scelerisque maximus eget fermentum odio phasellus non purus est efficitur laoreet mauris pharetra vestibulum fusce dictum risus blandit quis suspendisse aliquet nisi sodales consequat magna ante condimentum neque at luctus nibh finibus
-    <br><br>
-    facilisis dapibus etiam interdum tortor ligula congue sollicitudin erat viverra ac tincidunt nam porta elementum a enim euismod quam justo lectus commodo augue arcu dignissim velit aliquam imperdiet mollis nullam volutpat porttitor ullamcorper rutrum gravida cras eleifend turpis fames primis vulputate ornare sagittis vehicula praesent dui felis venenatis ultrices proin libero feugiat tristique accumsan maecenas potenti ultricies habitant morbi senectus netus suscipit auctor curabitur facilisi cubilia curae hac habitasse platea dictumst lorem ipsum dolor sit amet consectetur adipiscing elit  
   </main>
+
+  <footer class="mt-2 text-muted">
+    Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in
+    id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla
+    lacus nec metus bibendum egestas iaculis massa nisl malesuada lacinia integer nunc posuere ut hendrerit semper vel
+    class aptent taciti sociosqu ad litora torquent per conubia nostra
+    <br><br>
+    inceptos himenaeos orci varius natoque penatibus et magnis dis parturient montes nascetur ridiculus mus donec
+    rhoncus eros lobortis nulla molestie mattis scelerisque maximus eget fermentum odio phasellus non purus est
+    efficitur laoreet mauris pharetra vestibulum fusce dictum risus blandit quis suspendisse aliquet nisi sodales
+    consequat magna ante condimentum neque at luctus nibh finibus
+    <br><br>
+    facilisis dapibus etiam interdum tortor ligula congue sollicitudin erat viverra ac tincidunt nam porta elementum a
+    enim euismod quam justo lectus commodo augue arcu dignissim velit aliquam imperdiet mollis nullam volutpat porttitor
+    ullamcorper rutrum gravida cras eleifend turpis fames primis vulputate ornare sagittis vehicula praesent dui felis
+    venenatis ultrices proin libero feugiat tristique accumsan maecenas potenti ultricies habitant morbi senectus netus
+    suscipit auctor curabitur facilisi cubilia curae hac habitasse platea dictumst lorem ipsum dolor sit amet
+    consectetur adipiscing elit
+  </footer>
 
 
 </section>
@@ -182,6 +194,41 @@
     <div style="margin-left: auto;">
       <a routerLink="/contact" class="link-muted">Vezi mai mult <span class="material-symbols">arrow_forward</span></a>
     </div>
+  </div>
+
+  <div style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 100%;">
+    <h1>Contacteaza-ne</h1>
+    <h2>Ai intrebari sau remarci? Scrie-ne un mesaj!</h2>
+
+    <div style="display: flex; gap: 10px;">
+      <div style="width: 50%;">
+        <label>Email</label>
+        <br>
+        <input style="min-width: 150px;" type="text" id="email" name="email" required minlength="4" maxlength="8" size="10" />
+      </div>
+      <div style="width: 50%;">
+        <label>Nume</label><br>
+        <input style="min-width: 150px;" type="text" id="name" name="name" required minlength="4" maxlength="8" size="10" />
+      </div>
+    </div>
+    <div>
+      <label>Mesaj</label><br>
+      <textarea style="min-width: 300px; height: 200px;"></textarea>
+    </div>
+
+    <!-- <div class="card flex flex-wrap justify-center items-end gap-4">
+      <p-floatlabel>
+        <input pInputText id="over_label" [(ngModel)]="value1" autocomplete="off" />
+        <label for="over_label">Email</label>
+      </p-floatlabel>
+
+      <p-floatlabel>
+        <input pInputText id="over_label" [(ngModel)]="value2" autocomplete="off" />
+        <label for="over_label">Phone</label>
+      </p-floatlabel>
+    </div> -->
+
+
   </div>
 
 
