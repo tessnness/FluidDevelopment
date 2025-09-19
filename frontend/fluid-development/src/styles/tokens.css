@@ -33,6 +33,10 @@
 
         .text-muted {
             color: var(--color-text-muted);
+        }
+
+        .small-faded{
+            color: var(--color-text-muted);
             font-size: var(--fs-small);
         }
 

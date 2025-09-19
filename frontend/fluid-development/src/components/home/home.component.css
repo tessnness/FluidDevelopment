@@ -267,16 +267,16 @@ body {
     justify-content: center;
     border-radius: var(--radius-sm);
     padding: var(--space-2);
-    width: 275px;
-    height: 275px;
-    position: relative;
+    width: 350px;
+    height: 350px;
     overflow: hidden;
     margin: var(--space-3);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: #C3E2E8;
 
 }
 
-h1>span {
+.carousel-item h2 {
     pointer-events: auto;
     cursor: pointer;
 }
@@ -286,20 +286,11 @@ h1>span {
     background-color: var(--color-accent);
 }
 
-.background-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 200px;
-    color: var(--color-horizontal-scrollbar);
-    pointer-events: none;
-    z-index: 0;
-}
 
-.material-symbols.foundation {
+.material-symbols.icon {
+    height: 70%; font-size: 200px; margin-top: -100px;
     font-variation-settings:
-        'FILL' 0,
+        'FILL' 1,
         'wght' 200,
         'GRAD' 0,
         'opsz' 48
