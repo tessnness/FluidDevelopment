@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
 
   value1: string | undefined;
   value2: string | undefined;
+  value3: string | undefined;
 
   // target = 2000
 

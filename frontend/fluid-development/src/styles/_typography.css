@@ -35,8 +35,33 @@
         color: var(--color-text-muted);
     }
 
-    .small-faded{
+    .small-faded {
         color: var(--color-text-muted);
         font-size: var(--fs-small);
     }
+
+    input,
+    button,
+    textarea {
+        font-family: var(--font-sans);
+        font-size: var(--fs-base);
+        border-radius: var(--radius-sm);
+        border: solid 1px black;
+        box-shadow: var(--box-shadow-1);
+    }
+
+    input,
+    button {
+        height: 35px;
+    }
+
+    input{
+        min-width: 150px;
+    }
+
+    button:hover{
+        background-color: blue;
+    }
+
+
 }

@@ -35,7 +35,7 @@
   </div>
 </section>
 
-<section class="section section-pad about-section">
+<section class="section-pad about-section">
   <header style="display: flex; align-items: center;">
     <h1>Despre noi</h1>
 
@@ -127,7 +127,7 @@
 
 </section>
 
-<section class="section section-pad-soft">
+<section class="section-pad-soft">
   <div style="display: flex; align-items: center;">
     <h1>Proiectele noastre</h1>
     <div style="margin-left: auto;">
@@ -188,9 +188,9 @@
   </div>
 </section>
 
-<section class="section section-pad">
+<section class="section-pad contact-full">
   <div style="display: flex; align-items: center; justify-content: center;">
-    <h1>Contacteaza-ne</h1>
+    <h1>Contact</h1>
     <div style="margin-left: auto;">
       <a routerLink="/contact" class="link-muted">Vezi mai mult <span class="material-symbols">arrow_forward</span></a>
     </div>
@@ -200,23 +200,28 @@
     <h1>Contacteaza-ne</h1>
     <h2>Ai intrebari sau remarci? Scrie-ne un mesaj!</h2>
 
-    <div style="display: flex; gap: 10px;">
-      <div style="width: 50%;">
+    <div style="display: flex; gap: 10px; margin: 10px 0;">
+      <div>
         <label>Email</label>
         <br>
-        <input style="min-width: 150px;" type="text" id="email" name="email" required minlength="4" maxlength="8" size="10" />
+        <input type="text" id="email" name="email" required minlength="4" />
       </div>
-      <div style="width: 50%;">
+      <div>
         <label>Nume</label><br>
-        <input style="min-width: 150px;" type="text" id="name" name="name" required minlength="4" maxlength="8" size="10" />
+        <input type="text" id="name" name="name" required minlength="4" maxlength="20" />
       </div>
-    </div>
-    <div>
-      <label>Mesaj</label><br>
-      <textarea style="min-width: 300px; height: 200px;"></textarea>
     </div>
 
-    <!-- <div class="card flex flex-wrap justify-center items-end gap-4">
+    <div style="margin: 10px 0;">
+      <label>Mesaj</label><br>
+      <textarea style="height: 200px;"></textarea>
+    </div>
+
+    <div style="margin: 10px 0;">
+      <button style="font-weight: bold;">Trimite</button>
+    </div>
+
+    <!-- <div style="display: flex; gap: 10px; align-items: center; margin: 10px 0;">
       <p-floatlabel>
         <input pInputText id="over_label" [(ngModel)]="value1" autocomplete="off" />
         <label for="over_label">Email</label>
@@ -226,7 +231,18 @@
         <input pInputText id="over_label" [(ngModel)]="value2" autocomplete="off" />
         <label for="over_label">Phone</label>
       </p-floatlabel>
+    </div>
+    <div style="margin: 10px 0; ">
+      <p-floatlabel>
+        <textarea pTextarea id="over_label" [(ngModel)]="value3" rows="5" cols="40" style="resize: none; font-size: 18px;"
+          class="h-full"></textarea>
+        <label for="over_label">Mesaj</label>
+      </p-floatlabel>
     </div> -->
+
+
+
+
 
 
   </div>
@@ -235,7 +251,7 @@
 
 </section>
 
-<section class="section section-pad" style="background-color: #e5e5e5; border-radius: 4px 4px 0 4px">
+<section class="section-pad" style="background-color: #e5e5e5; border-radius: 4px 4px 0 4px">
   <div class="mt-2" style="display: flex;">
     <div style="display: flex; flex-direction: column;">
       <div>
