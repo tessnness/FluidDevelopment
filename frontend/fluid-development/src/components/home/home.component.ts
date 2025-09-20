@@ -2,11 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MenubarModule, Menubar } from 'primeng/menubar';
 import { RouterModule } from "@angular/router";
 import { CountUpModule } from 'ngx-countup';
-import { InputTextModule } from 'primeng/inputtext';
-import { FloatLabel } from 'primeng/floatlabel';
-import { FormsModule } from '@angular/forms';
-
-
 
 
 @Component({
@@ -14,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   standalone: true,
-  imports: [RouterModule, CountUpModule, FloatLabel, InputTextModule, FormsModule]
+  imports: [RouterModule, CountUpModule, ]
 })
 export class HomeComponent implements OnInit {
 
@@ -24,9 +19,6 @@ export class HomeComponent implements OnInit {
     useGrouping: false,
   }
 
-  value1: string | undefined;
-  value2: string | undefined;
-  value3: string | undefined;
 
   // target = 2000
 

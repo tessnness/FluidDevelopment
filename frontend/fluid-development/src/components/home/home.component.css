@@ -16,12 +16,16 @@ body {
         height: 100svh;
     }
 
-    .about-section {
+    .about-full {
         min-height: 100svh;
     }
 
     .contact-full {
         min-height: calc(100svh - var(--nav-h));
+    }
+
+    .projects-full {
+        height: calc(100svh - var(--nav-h));
     }
 }
 
@@ -30,13 +34,19 @@ body {
         height: 100dvh;
     }
 
-    .about-section {
+    .about-full {
         min-height: 100dvh;
     }
 
     .contact-full {
+        height: calc(100dvh - var(--nav-h));
+    }
+
+    .projects-full {
         min-height: calc(100dvh - var(--nav-h));
     }
+
+
 }
 
 
@@ -231,7 +241,7 @@ body {
     border-radius: var(--radius-sm);
 }
 
-.about-section {
+.about-full {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -239,11 +249,11 @@ body {
     padding: var(--space-6);
 }
 
-.about-section>header {
+.about-full>header {
     flex: 0 0 auto;
 }
 
-.about-section>footer {
+.about-full>footer {
     flex: 1 0 auto;
     display: flex;
     align-items: center;
@@ -320,6 +330,26 @@ body {
         'opsz' 48
 }
 
+.projects-full {
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column;
+    padding: var(--space-6);
+}
+
+.projects-full> :first-child {
+    flex: 0 0 auto;
+}
+
+
+.projects-full> :last-child {
+    margin-top: var(--space-4);
+    display: flex !important;
+    gap: var(--space-3);
+
+}
+
+
 .project-home {
     border-radius: var(--radius-md);
     position: relative;
@@ -344,7 +374,7 @@ body {
 }
 
 
-img {
+.project-home img {
     width: 100%;
     height: 100%;
     object-fit: cover;
