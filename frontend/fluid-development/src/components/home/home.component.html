@@ -1,263 +1,272 @@
-<section>
-  <div class="hero" style="position: relative; width: 100%;">
-    <div class="box" style="z-index: 2; display: flex; align-items: center; ">
-      <div>
-        <img src="assets/img/beyonce.png" style="width: 100px; height: 50px;">
-      </div>
+<main class="snap-y">
 
-      <input id="nav-toggle" type="checkbox" class="nav-toggle">
-      <label for="nav-toggle" class="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </label>
-
-
-      <div class="menu-parent">
-        <a routerLink="/" class="menu-item">ACASǍ
-        </a>
-        <a routerLink="/about" class="menu-item">DESPRE
-        </a>
-        <div class="dropdown">
-          <a routerLink="/projects" class="menu-item">PROIECTE</a>
-          <span class="dropdown-trigger material-symbols">arrow_drop_down</span>
-          <ul class="dropdown-menu" role="menu">
-            <li routerLink="/projects" [queryParams]="{ status: 'in-progress' }" class="project-link">In progress</li>
-            <li routerLink="/projects" [queryParams]="{ status: 'done' }" class="project-link">Incheiate</li>
-          </ul>
+  <section class="section-pad">
+    <div class="hero" style="position: relative; width: 100%;">
+      <div class="box" style="z-index: 2; display: flex; align-items: center; ">
+        <div>
+          <img src="assets/img/beyonce.png" style="width: 100px; height: 50px;">
         </div>
-        <a routerLink="/contact" class="menu-item">CONTACT
-        </a>
+
+        <input id="nav-toggle" type="checkbox" class="nav-toggle">
+        <label for="nav-toggle" class="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </label>
+
+
+        <div class="menu-parent">
+          <a routerLink="/" class="menu-item">ACASǍ
+          </a>
+          <a routerLink="/about" class="menu-item">DESPRE
+          </a>
+          <div class="dropdown">
+            <a routerLink="/projects" class="menu-item">PROIECTE</a>
+            <span class="dropdown-trigger material-symbols">arrow_drop_down</span>
+            <ul class="dropdown-menu" role="menu">
+              <li routerLink="/projects" [queryParams]="{ status: 'in-progress' }" class="project-link">In progress</li>
+              <li routerLink="/projects" [queryParams]="{ status: 'done' }" class="project-link">Incheiate</li>
+            </ul>
+          </div>
+          <a routerLink="/contact" class="menu-item">CONTACT
+          </a>
+        </div>
+      </div>
+
+      <div style="position: absolute; inset: 0; z-index: 1;">
+        <img src="assets/img/fluid-hero.png" alt="hero-image" class="hero-image">
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad about-full">
+    <header style="display: flex; align-items: center;">
+      <h1>Despre noi</h1>
+
+      <div style="margin-left: auto;">
+        <a routerLink="/about" class="link-muted">Vezi mai mult <span class="material-symbols">arrow_forward</span></a>
+      </div>
+    </header>
+
+
+
+    <main class="carousel-parent">
+      <div class="carousel-item">
+        <div class="material-symbols icon">home</div>
+        <div style="height: 30%;">
+          <h2>FONDAT IN</h2>
+          <h2 style="text-align: center;"><span style="display: inline-block;" [countUp]="2000"
+              [options]="countOpts">0</span></h2>
+
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="material-symbols icon">map</div>
+        <div style="height: 30%;">
+          <h2>PREZENTI IN</h2>
+          <h2 style="text-align: center;"><span [countUp]="9" [options]="countOpts">0</span> ORASE</h2>
+
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="material-symbols icon">water_pump</div>
+        <div style="height: 30%;">
+          <h2>PROIECTE INCHEIATE</h2>
+          <h2 style="text-align: center;"><span [countUp]="70" [options]="countOpts">0</span></h2>
+
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="material-symbols icon">engineering</div>
+        <div style="height: 30%;">
+          <h2>PROIECTE IN DERULARE</h2>
+          <h2 style="text-align: center;"><span [countUp]="4" [options]="countOpts">0</span></h2>
+
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="material-symbols icon">diversity_3</div>
+        <div style="height: 30%;">
+          <h2>ECHIPA DE</h2>
+          <h2 style="text-align: center;"><span [countUp]="55" [options]="countOpts">0</span> angajati</h2>
+
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="material-symbols icon">domain</div>
+        <div style="height: 30%;">
+          <h2>SUPRAFATA LUCRATA</h2>
+          <h2 style="text-align: center;"><span [countUp]="120" [options]="countOpts">0</span> mp</h2>
+
+        </div>
+      </div>
+
+
+    </main>
+
+    <footer class="mt-2 text-muted">
+      Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat
+      in
+      id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla
+      lacus nec metus bibendum egestas iaculis massa nisl malesuada lacinia integer nunc posuere ut hendrerit semper vel
+      class aptent taciti sociosqu ad litora torquent per conubia nostra
+      <br><br>
+      inceptos himenaeos orci varius natoque penatibus et magnis dis parturient montes nascetur ridiculus mus donec
+      rhoncus eros lobortis nulla molestie mattis scelerisque maximus eget fermentum odio phasellus non purus est
+      efficitur laoreet mauris pharetra vestibulum fusce dictum risus blandit quis suspendisse aliquet nisi sodales
+      consequat magna ante condimentum neque at luctus nibh finibus
+      <br><br>
+      facilisis dapibus etiam interdum tortor ligula congue sollicitudin erat viverra ac tincidunt nam porta elementum a
+      enim euismod quam justo lectus commodo augue arcu dignissim velit aliquam imperdiet mollis nullam volutpat
+      porttitor
+      ullamcorper rutrum gravida cras eleifend turpis fames primis vulputate ornare sagittis vehicula praesent dui felis
+      venenatis ultrices proin libero feugiat tristique accumsan maecenas potenti ultricies habitant morbi senectus
+      netus
+      suscipit auctor curabitur facilisi cubilia curae hac habitasse platea dictumst lorem ipsum dolor sit amet
+      consectetur adipiscing elit
+    </footer>
+
+
+  </section>
+
+  <section class="section-pad projects-full">
+    <div style="display: flex; align-items: center;">
+      <h1>Proiectele noastre</h1>
+      <div style="margin-left: auto;">
+        <a routerLink="/projects" class="link-muted">Vezi mai mult <span
+            class="material-symbols">arrow_forward</span></a>
       </div>
     </div>
 
-    <div style="position: absolute; inset: 0; z-index: 1;">
-      <img src="assets/img/fluid-hero.png" alt="hero-image" class="hero-image">
+    <div style="display: flex; flex-wrap: wrap;">
+
+      <div class="project-home">
+        <img class="project-background-image" src="assets/img/construction-site-1.jpg">
+        <div class="project-home-details">
+          <div class="project-home-title">Titlu proiect 1 nume lung super lung</div>
+          <div class="project-home-subtitle">Constanta</div>
+        </div>
+      </div>
+
+      <div class="project-home">
+        <img class="project-background-image" src="assets/img/construction-site-2.jpg">
+        <div class="project-home-details">
+          <div class="project-home-title">Titlu proiect 2</div>
+          <div class="project-home-subtitle">Tulcea</div>
+        </div>
+      </div>
+
+      <div class="project-home">
+        <img class="project-background-image" src="assets/img/construction-site-3.jpg">
+        <div class="project-home-details">
+          <div class="project-home-title">Titlu proiect 3</div>
+          <div class="project-home-subtitle">Brasov</div>
+        </div>
+      </div>
+
+      <div class="project-home">
+        <img class="project-background-image" src="assets/img/construction-site-4.jpg">
+        <div class="project-home-details">
+          <div class="project-home-title">Titlu proiect 4</div>
+          <div class="project-home-subtitle">Constanta</div>
+        </div>
+      </div>
+
+      <div class="project-home">
+        <img class="project-background-image" src="assets/img/construction-site-5.jpg">
+        <div class="project-home-details">
+          <div class="project-home-title">Titlu proiect 5</div>
+          <div class="project-home-subtitle">Constanta</div>
+        </div>
+      </div>
+
+      <div class="project-home">
+        <img class="project-background-image" src="assets/img/construction-site-6.jpg">
+        <div class="project-home-details">
+          <div class="project-home-title">Titlu proiect 6</div>
+          <div class="project-home-subtitle">Braila</div>
+        </div>
+      </div>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section-pad about-full">
-  <header style="display: flex; align-items: center;">
-    <h1>Despre noi</h1>
-
-    <div style="margin-left: auto;">
-      <a routerLink="/about" class="link-muted">Vezi mai mult <span class="material-symbols">arrow_forward</span></a>
-    </div>
-  </header>
-
-
-
-  <main class="carousel-parent">
-    <div class="carousel-item">
-      <div class="material-symbols icon">home</div>
-      <div style="height: 30%;">
-        <h2>FONDAT IN</h2>
-        <h2 style="text-align: center;"><span style="display: inline-block;" [countUp]="2000"
-            [options]="countOpts">0</span></h2>
-
+  <section class="section-pad contact-full">
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <h1>Contact</h1>
+      <div style="margin-left: auto;">
+        <a routerLink="/contact" class="link-muted">Vezi mai mult <span
+            class="material-symbols">arrow_forward</span></a>
       </div>
     </div>
 
-    <div class="carousel-item">
-      <div class="material-symbols icon">map</div>
-      <div style="height: 30%;">
-        <h2>PREZENTI IN</h2>
-        <h2 style="text-align: center;"><span [countUp]="9" [options]="countOpts">0</span> ORASE</h2>
+    <div style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 100%;">
+      <h1>Contacteaza-ne</h1>
+      <h2>Ai intrebari sau remarci? Scrie-ne un mesaj!</h2>
 
+      <div style="display: flex; gap: 10px; margin: 10px 0;">
+        <div>
+          <label>Email</label>
+          <br>
+          <input type="text" id="email" name="email" required minlength="4" />
+        </div>
+        <div>
+          <label>Nume</label><br>
+          <input type="text" id="name" name="name" required minlength="4" maxlength="20" />
+        </div>
       </div>
-    </div>
 
-    <div class="carousel-item">
-      <div class="material-symbols icon">water_pump</div>
-      <div style="height: 30%;">
-        <h2>PROIECTE INCHEIATE</h2>
-        <h2 style="text-align: center;"><span [countUp]="70" [options]="countOpts">0</span></h2>
-
+      <div style="margin: 10px 0;">
+        <label>Mesaj</label><br>
+        <textarea style="height: 200px;"></textarea>
       </div>
-    </div>
 
-    <div class="carousel-item">
-      <div class="material-symbols icon">engineering</div>
-      <div style="height: 30%;">
-        <h2>PROIECTE IN DERULARE</h2>
-        <h2 style="text-align: center;"><span [countUp]="4" [options]="countOpts">0</span></h2>
-
+      <div style="margin: 10px 0;">
+        <button style="font-weight: bold;">Trimite</button>
       </div>
-    </div>
 
-    <div class="carousel-item">
-      <div class="material-symbols icon">diversity_3</div>
-      <div style="height: 30%;">
-        <h2>ECHIPA DE</h2>
-        <h2 style="text-align: center;"><span [countUp]="55" [options]="countOpts">0</span> angajati</h2>
-
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <div class="material-symbols icon">domain</div>
-      <div style="height: 30%;">
-        <h2>SUPRAFATA LUCRATA</h2>
-        <h2 style="text-align: center;"><span [countUp]="120" [options]="countOpts">0</span> mp</h2>
-
-      </div>
     </div>
 
 
-  </main>
 
-  <footer class="mt-2 text-muted">
-    Lorem ipsum dolor sit amet consectetur adipiscing elit quisque faucibus ex sapien vitae pellentesque sem placerat in
-    id cursus mi pretium tellus duis convallis tempus leo eu aenean sed diam urna tempor pulvinar vivamus fringilla
-    lacus nec metus bibendum egestas iaculis massa nisl malesuada lacinia integer nunc posuere ut hendrerit semper vel
-    class aptent taciti sociosqu ad litora torquent per conubia nostra
-    <br><br>
-    inceptos himenaeos orci varius natoque penatibus et magnis dis parturient montes nascetur ridiculus mus donec
-    rhoncus eros lobortis nulla molestie mattis scelerisque maximus eget fermentum odio phasellus non purus est
-    efficitur laoreet mauris pharetra vestibulum fusce dictum risus blandit quis suspendisse aliquet nisi sodales
-    consequat magna ante condimentum neque at luctus nibh finibus
-    <br><br>
-    facilisis dapibus etiam interdum tortor ligula congue sollicitudin erat viverra ac tincidunt nam porta elementum a
-    enim euismod quam justo lectus commodo augue arcu dignissim velit aliquam imperdiet mollis nullam volutpat porttitor
-    ullamcorper rutrum gravida cras eleifend turpis fames primis vulputate ornare sagittis vehicula praesent dui felis
-    venenatis ultrices proin libero feugiat tristique accumsan maecenas potenti ultricies habitant morbi senectus netus
-    suscipit auctor curabitur facilisi cubilia curae hac habitasse platea dictumst lorem ipsum dolor sit amet
-    consectetur adipiscing elit
-  </footer>
+  </section>
 
-
-</section>
-
-<section class="section-pad-soft projects-full">
-  <div style="display: flex; align-items: center;">
-    <h1>Proiectele noastre</h1>
-    <div style="margin-left: auto;">
-      <a routerLink="/projects" class="link-muted">Vezi mai mult <span class="material-symbols">arrow_forward</span></a>
-    </div>
-  </div>
-
-  <div style="display: flex; flex-wrap: wrap;">
-
-    <div class="project-home">
-      <img class="project-background-image" src="assets/img/construction-site-1.jpg">
-      <div class="project-home-details">
-        <div class="project-home-title">Titlu proiect 1 nume lung super lung</div>
-        <div class="project-home-subtitle">Constanta</div>
-      </div>
-    </div>
-
-    <div class="project-home">
-      <img class="project-background-image" src="assets/img/construction-site-2.jpg">
-      <div class="project-home-details">
-        <div class="project-home-title">Titlu proiect 2</div>
-        <div class="project-home-subtitle">Tulcea</div>
-      </div>
-    </div>
-
-    <div class="project-home">
-      <img class="project-background-image" src="assets/img/construction-site-3.jpg">
-      <div class="project-home-details">
-        <div class="project-home-title">Titlu proiect 3</div>
-        <div class="project-home-subtitle">Brasov</div>
-      </div>
-    </div>
-
-    <div class="project-home">
-      <img class="project-background-image" src="assets/img/construction-site-4.jpg">
-      <div class="project-home-details">
-        <div class="project-home-title">Titlu proiect 4</div>
-        <div class="project-home-subtitle">Constanta</div>
-      </div>
-    </div>
-
-    <div class="project-home">
-      <img class="project-background-image" src="assets/img/construction-site-5.jpg">
-      <div class="project-home-details">
-        <div class="project-home-title">Titlu proiect 5</div>
-        <div class="project-home-subtitle">Constanta</div>
-      </div>
-    </div>
-
-    <div class="project-home">
-      <img class="project-background-image" src="assets/img/construction-site-6.jpg">
-      <div class="project-home-details">
-        <div class="project-home-title">Titlu proiect 6</div>
-        <div class="project-home-subtitle">Braila</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section class="section-pad contact-full">
-  <div style="display: flex; align-items: center; justify-content: center;">
-    <h1>Contact</h1>
-    <div style="margin-left: auto;">
-      <a routerLink="/contact" class="link-muted">Vezi mai mult <span class="material-symbols">arrow_forward</span></a>
-    </div>
-  </div>
-
-  <div style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 100%;">
-    <h1>Contacteaza-ne</h1>
-    <h2>Ai intrebari sau remarci? Scrie-ne un mesaj!</h2>
-
-    <div style="display: flex; gap: 10px; margin: 10px 0;">
-      <div>
-        <label>Email</label>
+  <section class="section-pad footer-full">
+    <div class="mt-2" style="display: flex;">
+      <div style="display: flex; flex-direction: column;">
+        <div>
+          <img src="assets/img/beyonce.png" style="width: 100px; height: 50px;">
+        </div>
+        <div>Fluid Development S.R.L.</div>
+        <div>Nr. Reg. Comert: J13/1813/2011</div>
+        <div>CUI: 16310296</div>
         <br>
-        <input type="text" id="email" name="email" required minlength="4" />
+        <br>
+        <div style="text-wrap: wrap;">
+          <span class="material-symbols">location_on</span>
+          Bdul. Tomis 143A Et. P (INCINTA PROIECT SA), Constanta
+        </div>
+        <!-- Bdul. Tomis 143A Et. P Ap. BIR. 1 Cod 900591 (INCINTA PROIECT SA), Constanta, Romania -->
+        <div>
+          <a>
+            <span class="material-symbols">mail</span>
+            officefluiddevelopment.ro</a>
+        </div>
+        <div>
+          <span class="material-symbols">call</span>
+          +40729994764
+        </div>
       </div>
-      <div>
-        <label>Nume</label><br>
-        <input type="text" id="name" name="name" required minlength="4" maxlength="20" />
-      </div>
-    </div>
-
-    <div style="margin: 10px 0;">
-      <label>Mesaj</label><br>
-      <textarea style="height: 200px;"></textarea>
-    </div>
-
-    <div style="margin: 10px 0;">
-      <button style="font-weight: bold;">Trimite</button>
-    </div>
-
-  </div>
-
-
-
-</section>
-
-<section class="section-pad" style="background-color: #e5e5e5; border-radius: 4px 4px 0 4px">
-  <div class="mt-2" style="display: flex;">
-    <div style="display: flex; flex-direction: column;">
-      <div>
-        <img src="assets/img/beyonce.png" style="width: 100px; height: 50px;">
-      </div>
-      <div>Fluid Development S.R.L.</div>
-      <div>Nr. Reg. Comert: J13/1813/2011</div>
-      <div>CUI: 16310296</div>
-      <br>
-      <br>
-      <div style="text-wrap: wrap;">
-        <span class="material-symbols">location_on</span>
-        Bdul. Tomis 143A Et. P (INCINTA PROIECT SA), Constanta
-      </div>
-      <!-- Bdul. Tomis 143A Et. P Ap. BIR. 1 Cod 900591 (INCINTA PROIECT SA), Constanta, Romania -->
-      <div>
-        <a>
-          <span class="material-symbols">mail</span>
-          officefluiddevelopment.ro</a>
-      </div>
-      <div>
-        <span class="material-symbols">call</span>
-        +40729994764
+      <div style="margin-left: auto; display: flex; flex-direction: column; margin-top: 50px;">
+        <div style="">GDPR</div>
+        <div>Cookie Policy</div>
+        <div>Termeni si Conditii</div>
+        <div style="margin-top: auto;">© 2025 Toate drepturile rezervate</div>
       </div>
     </div>
-    <div style="margin-left: auto; display: flex; flex-direction: column;">
-      <div style="margin-top: 50px;">GDPR</div>
-      <div>Cookie Policy</div>
-      <div>Termeni si Conditii</div>
-      <div style="margin-top: auto;">© 2025 Toate drepturile rezervate</div>
-    </div>
-  </div>
-</section>
+  </section>
+
+</main>

@@ -7,6 +7,24 @@ body {
     overflow-x: hidden;
 }
 
+/* Smooth anchor jumps (#about etc.) */
+html { scroll-behavior: smooth; }
+
+.snap-y {
+  height: 100dvh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;  
+  scroll-padding-top: var(--nav-h, 0px); 
+}
+
+
+.section-pad {
+  min-height: 100dvh;
+  scroll-snap-align: start;        
+}
+
+
+
 .hero {
     height: 100vh;
 }
@@ -27,6 +45,7 @@ body {
     .projects-full {
         height: calc(100svh - var(--nav-h));
     }
+
 }
 
 @supports (height: 100dvh) {
@@ -177,12 +196,12 @@ body {
 .menu-item {
     font-size: var(--fs-h3);
     font-weight: 700;
-    color: var(--color-text-muted);
+    color: var(--color-text);
     text-decoration: none;
 }
 
 .menu-item:hover {
-    color: var(--color-text);
+    color: var(--color-text-muted);
 }
 
 
@@ -200,12 +219,12 @@ body {
     cursor: pointer;
     padding: 0 0 0 var(--space-1);
     vertical-align: middle;
-    color: var(--color-text-muted);
+    color: var(--color-text);
 
 }
 
 .dropdown-trigger:hover {
-    color: var(--color-text);
+    color: var(--color-text-muted);
 
 }
 
@@ -232,12 +251,12 @@ body {
 .dropdown-menu li {
     cursor: pointer;
     padding: var(--space-4);
-    color: var(--color-text-muted);
+    color: var(--color-text);
 }
 
 .dropdown-menu li:hover {
     background: var(--color-accent);
-    color: var(--color-text);
+    color: var(--color-text-muted);
     border-radius: var(--radius-sm);
 }
 
@@ -267,7 +286,7 @@ body {
     flex-wrap: nowrap;
     overflow-x: auto;
     scrollbar-width: thin;
-    scrollbar-color: var(--color-horizontal-scrollbar) var(--color-horizontal-scrollbar-background);
+    scrollbar-color: var(--color-accent) var(--color-white);
     gap: 10px;
     margin-top: var(--space-4);
 }
@@ -277,17 +296,17 @@ body {
 }
 
 .carousel-parent::-webkit-scrollbar-track {
-    background: var(--color-horizontal-scrollbar-background);
+    background: var(--color-white);
     border-radius: var(--radius-sm);
 }
 
 .carousel-parent::-webkit-scrollbar-thumb {
-    background: var(--color-horizontal-scrollbar);
+    background: var(--color-accent);
     border-radius: var(--radius-sm);
 }
 
 .carousel-parent::-webkit-scrollbar-thumb:hover {
-    background: var(--color-text-muted);
+    background: var(--color-text);
 }
 
 
@@ -304,7 +323,7 @@ body {
     overflow: hidden;
     margin: var(--space-3);
     box-shadow: var(--box-shadow-1);
-    background-color: #C3E2E8;
+    background-color: var(--color-white);
 
 }
 
@@ -337,16 +356,22 @@ body {
     padding: var(--space-6);
 }
 
+
 .projects-full> :first-child {
     flex: 0 0 auto;
 }
 
 
-.projects-full> :last-child {
-    margin-top: var(--space-4);
-    display: flex !important;
-    gap: var(--space-3);
 
+
+.projects-full> :last-child {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: var(--space-3);
 }
 
 
@@ -392,13 +417,13 @@ body {
 
 .project-home-title {
     font-size: var(--fs-h2);
-    color: var(--color-white-text);
+    color: var(--color-white);
 
 }
 
 .project-home-subtitle {
     font-size: var(--fs-h3);
-    color: var(--color-white-text);
+    color: var(--color-white);
 
 }
 
@@ -417,4 +442,56 @@ body {
 .contact-full>div:last-child {
     flex: 1 0 auto;
 
+}
+
+.contact-full button:hover {
+    background-color: var(--color-accent);
+}
+
+.contact-full button {
+    background-color: var(--color-text)
+}
+
+
+
+
+.footer-full {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-6);
+    background: var(--color-accent);
+    color: var(--color-text);
+    border-radius: 4px 4px 0 0;
+    min-height: 50vh;
+}
+
+.footer-full>.mt-2 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+@media (max-width:767px) {
+    .footer-full {
+        height: 100vh !important;
+        margin-block: 0;
+    }
+
+    @supports (height:100svh) {
+        .footer-full {
+            height: 100svh !important;
+        }
+    }
+
+    @supports (height:100dvh) {
+        .footer-full {
+            height: 100dvh !important;
+        }
+    }
 }

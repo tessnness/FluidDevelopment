@@ -1,16 +1,18 @@
 @layer app {
     :root {
-        --color-text: #1F2937;
+        /* --color-text: #1F2937;
         --color-text-muted: #6b7280;
         --color-heading: #111827;
-        --color-accent: #e8f4f6;
+        --color-accent: #e8f4f6; */
 
-        --color-horizontal-scrollbar: #0000001a;
-        --color-horizontal-scrollbar-background: #f1f1f1;
-        --color-fluid: #2295AA;
-        --color-fluid-600: #1A6F7F;
-        --color-white-text: #FFFFFF;
-        --color-bg: #ffffff;
+        --color-text: #146E7D;
+        --color-text-muted: #2694A6;
+        --color-accent: #CCE6EA;
+        --color-white: #FFFFFF;
+
+        /* --color-dark-turquoise: #146E7D;
+        --color-mid-turquoise: #2694A6;
+        --color-light-turquoise: #CCE6EA; */
 
 
 
@@ -53,11 +55,6 @@
 
         .section-pad {
             padding: 20px;
-        }
-
-        .section-pad-soft {
-            padding: 20px;
-            /* background: #bdf1fc; */
         }
 
         .section-tall-dark {

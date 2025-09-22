@@ -15,7 +15,7 @@
         font-family: var(--font-sans);
         font-weight: 700;
         margin: 18px 0;
-        color: var(--color-heading);
+        color: var(--color-text);
         line-height: 1.2;
     }
 
@@ -57,10 +57,6 @@
 
     input{
         min-width: 150px;
-    }
-
-    button:hover{
-        background-color: blue;
     }
 
 
