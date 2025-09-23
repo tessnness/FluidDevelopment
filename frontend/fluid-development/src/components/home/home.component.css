@@ -7,20 +7,21 @@ body {
     overflow-x: hidden;
 }
 
-/* Smooth anchor jumps (#about etc.) */
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 .snap-y {
-  height: 100dvh;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;  
-  scroll-padding-top: var(--nav-h, 0px); 
+    height: 100dvh;
+    overflow-y: auto;
+    scroll-snap-type: y proximity;
+    scroll-padding-top: var(--nav-h, 0px);
 }
 
 
 .section-pad {
-  min-height: 100dvh;
-  scroll-snap-align: start;        
+    min-height: 100dvh;
+    scroll-snap-align: start;
 }
 
 
@@ -28,6 +29,12 @@ html { scroll-behavior: smooth; }
 .hero {
     height: 100vh;
 }
+
+
+.hero-full {
+    padding: 0;
+}
+
 
 @supports (height: 100svh) {
     .hero {
@@ -96,15 +103,18 @@ html { scroll-behavior: smooth; }
     margin: 5px 0;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
 
     .hero {
         height: 70dvh;
     }
 
-    .hero-image {
-        object-fit: contain;
-        background: #000;
+    .hero-full .hero {
+        height: 100dvh;
+    }
+
+    .hero-full .hero-image {
+        object-fit: initial;
     }
 
     .menu-parent {
@@ -151,9 +161,26 @@ html { scroll-behavior: smooth; }
     .contact-full button {
         width: 330px
     }
+
+    .footer-full {
+        height: 100vh !important;
+        margin-block: 0;
+    }
+
+    @supports (height:100svh) {
+        .footer-full {
+            height: 100svh !important;
+        }
+    }
+
+    @supports (height:100dvh) {
+        .footer-full {
+            height: 100dvh !important;
+        }
+    }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
     .menu-parent {
         display: flex;
         align-items: center;
@@ -161,6 +188,11 @@ html { scroll-behavior: smooth; }
         margin-left: auto;
         margin-right: var(--space-6);
         white-space: nowrap;
+    }
+
+    .hero-image {
+        object-fit: cover;
+
     }
 
     .hamburger {
@@ -184,7 +216,6 @@ html { scroll-behavior: smooth; }
     height: 100%;
     display: block;
     max-width: none;
-    object-fit: cover;
     object-position: center;
 }
 
@@ -475,23 +506,4 @@ html { scroll-behavior: smooth; }
     width: 100%;
     margin: 0 auto;
     flex-wrap: wrap;
-}
-
-@media (max-width:767px) {
-    .footer-full {
-        height: 100vh !important;
-        margin-block: 0;
-    }
-
-    @supports (height:100svh) {
-        .footer-full {
-            height: 100svh !important;
-        }
-    }
-
-    @supports (height:100dvh) {
-        .footer-full {
-            height: 100dvh !important;
-        }
-    }
 }
