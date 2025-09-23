@@ -1,36 +1,9 @@
+<app-header></app-header>
+
 <main class="snap-y">
 
   <section class="section-pad hero-full">
     <div class="hero" style="position: relative; width: 100%;">
-      <div class="box" style="z-index: 2; display: flex; align-items: center; ">
-        <div>
-          <img src="assets/img/beyonce.png" style="width: 100px; height: 50px;">
-        </div>
-
-        <input id="nav-toggle" type="checkbox" class="nav-toggle">
-        <label for="nav-toggle" class="hamburger" aria-label="Menu">
-          <span></span><span></span><span></span>
-        </label>
-
-
-        <div class="menu-parent">
-          <a routerLink="/" class="menu-item">ACASǍ
-          </a>
-          <a routerLink="/about" class="menu-item">DESPRE
-          </a>
-          <div class="dropdown">
-            <a routerLink="/projects" class="menu-item">PROIECTE</a>
-            <span class="dropdown-trigger material-symbols">arrow_drop_down</span>
-            <ul class="dropdown-menu" role="menu">
-              <li routerLink="/projects" [queryParams]="{ status: 'in-progress' }" class="project-link">In progress</li>
-              <li routerLink="/projects" [queryParams]="{ status: 'done' }" class="project-link">Incheiate</li>
-            </ul>
-          </div>
-          <a routerLink="/contact" class="menu-item">CONTACT
-          </a>
-        </div>
-      </div>
-
       <div style="position: absolute; inset: 0; z-index: 1;">
         <img src="assets/img/fluid-hero.png" alt="hero-image" class="hero-image">
       </div>
@@ -144,7 +117,7 @@
     <div style="display: flex; flex-wrap: wrap;">
 
       <div class="project-home">
-        <img class="project-background-image" src="assets/img/construction-site-1.jpg">
+        <img src="assets/img/construction-site-1.jpg">
         <div class="project-home-details">
           <div class="project-home-title">Titlu proiect 1 nume lung super lung</div>
           <div class="project-home-subtitle">Constanta</div>
@@ -152,7 +125,7 @@
       </div>
 
       <div class="project-home">
-        <img class="project-background-image" src="assets/img/construction-site-2.jpg">
+        <img src="assets/img/construction-site-2.jpg">
         <div class="project-home-details">
           <div class="project-home-title">Titlu proiect 2</div>
           <div class="project-home-subtitle">Tulcea</div>
@@ -160,7 +133,7 @@
       </div>
 
       <div class="project-home">
-        <img class="project-background-image" src="assets/img/construction-site-3.jpg">
+        <img src="assets/img/construction-site-3.jpg">
         <div class="project-home-details">
           <div class="project-home-title">Titlu proiect 3</div>
           <div class="project-home-subtitle">Brasov</div>
@@ -168,7 +141,7 @@
       </div>
 
       <div class="project-home">
-        <img class="project-background-image" src="assets/img/construction-site-4.jpg">
+        <img src="assets/img/construction-site-4.jpg">
         <div class="project-home-details">
           <div class="project-home-title">Titlu proiect 4</div>
           <div class="project-home-subtitle">Constanta</div>
@@ -176,7 +149,7 @@
       </div>
 
       <div class="project-home">
-        <img class="project-background-image" src="assets/img/construction-site-5.jpg">
+        <img src="assets/img/construction-site-5.jpg">
         <div class="project-home-details">
           <div class="project-home-title">Titlu proiect 5</div>
           <div class="project-home-subtitle">Constanta</div>
@@ -184,7 +157,7 @@
       </div>
 
       <div class="project-home">
-        <img class="project-background-image" src="assets/img/construction-site-6.jpg">
+        <img src="assets/img/construction-site-6.jpg">
         <div class="project-home-details">
           <div class="project-home-title">Titlu proiect 6</div>
           <div class="project-home-subtitle">Braila</div>
@@ -234,39 +207,6 @@
 
   </section>
 
-  <section class="section-pad footer-full">
-    <div class="mt-2" style="display: flex;">
-      <div style="display: flex; flex-direction: column;">
-        <div>
-          <img src="assets/img/beyonce.png" style="width: 100px; height: 50px;">
-        </div>
-        <!-- <div>Fluid Development S.R.L.</div>
-        <div>Nr. Reg. Comert: J13/1813/2011</div>
-        <div>CUI: 16310296</div>
-        <br>
-        <br> -->
-        <div style="text-wrap: wrap;">
-          <span class="material-symbols">location_on</span>
-          Bdul. Tomis 143A Et. P (INCINTA PROIECT SA), Constanta
-        </div>
-        <!-- Bdul. Tomis 143A Et. P Ap. BIR. 1 Cod 900591 (INCINTA PROIECT SA), Constanta, Romania -->
-        <!-- <div>
-          <a>
-            <span class="material-symbols">mail</span>
-            officefluiddevelopment.ro</a>
-        </div> -->
-        <div>
-          <span class="material-symbols">call</span>
-          +40729994764
-        </div>
-      </div>
-      <div style="margin-left: auto; display: flex; flex-direction: column; margin-top: 50px;">
-        <div style="">GDPR</div>
-        <div>Cookie Policy</div>
-        <div>Termeni si Conditii</div>
-        <div style="margin-top: auto;">© 2025 Toate drepturile rezervate</div>
-      </div>
-    </div>
-  </section>
+<app-footer></app-footer>
 
 </main>
