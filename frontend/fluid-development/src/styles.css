@@ -1,11 +1,38 @@
 @import "primeicons/primeicons.css";
-@import "@fontsource-variable/montserrat/index.css";
 @import "./styles/tokens.css";
 @import "./styles/_typography.css";
 
+@font-face {
+    font-family: "Gilroy";
+    src: url("assets/fonts/gilroy/Gilroy-Regular.woff2") format("woff2"),
+        url("assets/fonts/gilroy/Gilroy-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("assets/fonts/gilroy/Gilroy-Medium.woff2") format("woff2"),
+        url("assets/fonts/gilroy/Gilroy-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Gilroy";
+    src: url("assets/fonts/gilroy/Gilroy-Bold.woff2") format("woff2"),
+        url("assets/fonts/gilroy/Gilroy-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
-    --font-sans: "MontserratVariable", system-ui, sans-serif;
-    --nav-h: 64px;
+    --font-sans: "Gilroy", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --nav-h: 0px;
+    --section-pad-block: var(--space-6, 24px);
 }
 
 html,
@@ -14,6 +41,31 @@ body {
     margin: 0;
     overflow-y: auto;
     overflow-x: hidden;
+    font-family: var(--font-sans);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    scroll-snap-type: y proximity;
+}
+
+.section-pad {
+    scroll-snap-align: start;
+    /* snap to the start edge */
+    scroll-margin-top: var(--section-pad-block);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    body {
+        scroll-snap-type: none;
+    }
 }
 
 .app-shell {

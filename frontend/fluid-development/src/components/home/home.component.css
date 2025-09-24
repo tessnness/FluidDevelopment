@@ -2,27 +2,24 @@
     --nav-h: 0px;
 }
 
-html,
-body {
-    overflow-x: hidden;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-
-
-
 .hero {
     height: 100vh;
 }
 
-
+/* HERO has no inner top padding */
 .hero-full {
+    --section-pad-block: 0px;
     padding: 0;
 }
 
+/* About/Projects/Contact use the same spacing token */
+.about-full,
+.projects-full,
+.contact-full {
+    --section-pad-block: var(--space-6, 24px);
+    padding: var(--section-pad-block);
+    min-height: 100vh;
+}
 
 @media (max-width: 991px) {
     .hero {

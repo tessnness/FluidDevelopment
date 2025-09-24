@@ -22,7 +22,8 @@
         --fs-h2: 28px;
         --fs-h3: 22px;
 
-        --font-sans: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        --font-sans: "Gilroy", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
 
         --space-1: 4px;
         --space-2: 8px;
@@ -35,36 +36,38 @@
 
         --box-shadow-1: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
-        .text-muted {
-            color: var(--color-text-muted);
-        }
 
-        .small-faded{
-            color: var(--color-text-muted);
-            font-size: var(--fs-small);
-        }
+    }
 
-        .link-muted {
-            color: var(--color-text-muted);
-            text-decoration: none;
-        }
+    .text-muted {
+        color: var(--color-text-muted);
+    }
 
-        .link-muted:hover {
-            color: var(--color-primary);
-        }
+    .small-faded {
+        color: var(--color-text-muted);
+        font-size: var(--fs-small);
+    }
 
-        .section-pad {
-            padding: 20px;
-        }
+    .link-muted {
+        color: var(--color-text-muted);
+        text-decoration: none;
+    }
 
-        .section-tall-dark {
-            height: 500px;
-            background: #000;
-        }
+    .link-muted:hover {
+        color: var(--color-primary);
+    }
 
-        .mt-2 {
-            margin-top: 16px;
-        }
+    .section-pad {
+        padding: 20px;
+    }
+
+    .section-tall-dark {
+        height: 500px;
+        background: #000;
+    }
+
+    .mt-2 {
+        margin-top: 16px;
     }
 
 

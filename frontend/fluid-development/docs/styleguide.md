@@ -28,20 +28,21 @@
 > Source of truth: `src/styles/tokens.css`
 
 ## 2) Typography
-- **Font family**: Montserrat (self-hosted), sans-serif
+- **Font family**: Gilroy (self-hosted), sans-serif
+    Fallbacks: system-ui, -apple-system, "Segoe UI", Roboto, Arial
 - **Base text**:  
   - Size: `18px`  
-  - Color: `#1F2937`  
+  - Color: `#146E7D` (uses `--color-text`)  
   - Line-height: `1.6`
 
 - **Headings**:  
-  - **H1**: 36px / bold / `#111827`  
-  - **H2**: 28px / bold / `#111827`  
-  - **H3**: 22px / bold / `#111827`
+  - **H1**: 36px / bold / `#146E7D`  
+  - **H2**: 28px / bold / `#146E7D`  
+  - **H3**: 22px / bold / `#146E7D`
 
 - **Muted text**:  
   - Size: `14px`  
-  - Color: `#6B7280`
+  - Color: `#2694A6` (uses `--color-text-muted`)
 
 
 
