@@ -1,6 +1,16 @@
+:host {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    display: block;
+    background: #fff;
+}
+
 .box {
-    position: relative;
-    z-index: 1000;
+    min-height: var(--nav-h);
+    display: flex;
+    align-items: center;
+    padding: var(--space-2) var(--space-6);
 }
 
 .nav-toggle {

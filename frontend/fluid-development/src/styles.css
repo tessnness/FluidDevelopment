@@ -31,7 +31,7 @@
 
 :root {
     --font-sans: "Gilroy", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    --nav-h: 0px;
+    --nav-h: 72px;
     --section-pad-block: var(--space-6, 24px);
 }
 
@@ -50,12 +50,26 @@ html {
 
 body {
     scroll-snap-type: y proximity;
+    scroll-padding-top: var(--nav-h);
 }
 
-.section-pad {
+.section-pad>header:first-child {
     scroll-snap-align: start;
-    /* snap to the start edge */
-    scroll-margin-top: var(--section-pad-block);
+    scroll-margin-top: calc(var(--nav-h) + 1px);
+    scroll-snap-stop: always;
+    padding-top: 0.01px;
+}
+
+.section-pad h1 {
+    margin-top: 0;
+}
+
+.hero-full {
+    scroll-snap-align: none;
+}
+
+.hero-image {
+    z-index: 0 !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -81,7 +95,9 @@ body {
 }
 
 .box {
-    position: static;
+    position: relative;
+    z-index: 2000;
+    background: #fff;
 }
 
 .footer-full {
