@@ -11,18 +11,6 @@ html {
     scroll-behavior: smooth;
 }
 
-.snap-y {
-    height: 100dvh;
-    overflow-y: auto;
-    scroll-snap-type: y proximity;
-    scroll-padding-top: var(--nav-h, 0px);
-}
-
-
-.section-pad {
-    min-height: 100dvh;
-    scroll-snap-align: start;
-}
 
 
 
@@ -33,46 +21,6 @@ html {
 
 .hero-full {
     padding: 0;
-}
-
-
-@supports (height: 100svh) {
-    .hero {
-        height: 100svh;
-    }
-
-    .about-full {
-        min-height: 100svh;
-    }
-
-    .contact-full {
-        min-height: calc(100svh - var(--nav-h));
-    }
-
-    .projects-full {
-        height: calc(100svh - var(--nav-h));
-    }
-
-}
-
-@supports (height: 100dvh) {
-    .hero {
-        height: 100dvh;
-    }
-
-    .about-full {
-        min-height: 100dvh;
-    }
-
-    .contact-full {
-        height: calc(100dvh - var(--nav-h));
-    }
-
-    .projects-full {
-        min-height: calc(100dvh - var(--nav-h));
-    }
-
-
 }
 
 

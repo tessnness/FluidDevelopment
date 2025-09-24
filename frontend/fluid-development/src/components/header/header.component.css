@@ -1,9 +1,6 @@
 .box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: var(--space-2) var(--space-6);
+    position: relative;
+    z-index: 1000;
 }
 
 .nav-toggle {
@@ -38,15 +35,11 @@
 }
 
 .dropdown {
-    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
-.dropdown-menu {
-    position: static;
-    display: none;
-    margin-top: 4px;
-    box-shadow: none;
-}
 
 .dropdown:hover .dropdown-menu {
     display: block;
@@ -59,19 +52,23 @@
 
 
 .dropdown-menu {
-    display: none;
     position: absolute;
-    top: 70%;
+    top: 100%;
+    left: 0;
     min-width: 200px;
     padding: var(--space-2);
-    margin: var(--space-1) 0 0;
+    margin-top: var(--space-1);
     list-style: none;
-    background-color: #fff;
+    background: #fff;
     border-radius: var(--radius-sm);
     line-height: 1.75;
     font-weight: 700;
+    display: none;
+    z-index: 1001;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
 }
 
+.dropdown:hover .dropdown-menu,
 .dropdown-trigger:hover+.dropdown-menu,
 .dropdown-menu:hover {
     display: block;
@@ -89,11 +86,6 @@
     border-radius: var(--radius-sm);
 }
 
-.dropdown {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
 
 .dropdown-trigger {
     cursor: pointer;

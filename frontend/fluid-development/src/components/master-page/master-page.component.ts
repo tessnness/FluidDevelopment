@@ -6,13 +6,14 @@ import { RouterModule } from '@angular/router';
 
 import {Router, NavigationEnd} from '@angular/router';
 import {filter, map, startWith} from 'rxjs/operators';
+import { AsyncPipe } from '@angular/common';
 
 
 @Component({
   selector: 'app-master-page',
   templateUrl: './master-page.component.html',
   styleUrls: ['./master-page.component.css'],
-  imports: [HeaderComponent, RouterModule, FooterComponent]
+  imports: [HeaderComponent, RouterModule, FooterComponent, AsyncPipe]
 })
 export class MasterPageComponent implements OnInit {
 

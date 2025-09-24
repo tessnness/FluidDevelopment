@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MenubarModule, Menubar } from 'primeng/menubar';
 import { RouterModule } from "@angular/router";
 import { CountUpModule } from 'ngx-countup';
-import { HeaderComponent } from '../header/header.component';
-import { FooterComponent } from '../footer/footer.component';
 
 
 @Component({
@@ -11,7 +9,7 @@ import { FooterComponent } from '../footer/footer.component';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   standalone: true,
-  imports: [RouterModule, CountUpModule, HeaderComponent, FooterComponent]
+  imports: [RouterModule, CountUpModule]
 })
 export class HomeComponent implements OnInit {
 
