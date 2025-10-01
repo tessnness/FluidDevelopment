@@ -9,7 +9,7 @@ import { CountUpModule } from 'ngx-countup';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   standalone: true,
-  imports: [RouterModule, CountUpModule]
+  imports: [RouterModule, CountUpModule,]
 })
 export class HomeComponent implements OnInit {
 

@@ -53,11 +53,9 @@ body {
     scroll-padding-top: var(--nav-h);
 }
 
-.section-pad>header:first-child {
+.section-pad {
     scroll-snap-align: start;
-    scroll-margin-top: calc(var(--nav-h) + 1px);
-    scroll-snap-stop: always;
-    padding-top: 0.01px;
+    scroll-margin-top: calc(var(--nav-h) + var(--section-pad-block, 0px) + 1px);
 }
 
 .section-pad h1 {
