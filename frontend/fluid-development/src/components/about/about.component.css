@@ -14,3 +14,21 @@
     height: 100%;
     object-fit: cover;
 }
+
+.about-services {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about-services-card {
+    width: 40%;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow-1);
+    border-radius: var(--radius-sm);
+}
+
+.about-services-card img {
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}

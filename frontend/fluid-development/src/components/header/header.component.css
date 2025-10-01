@@ -76,7 +76,7 @@
     font-weight: 700;
     display: none;
     z-index: 1001;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+    box-shadow: var(--box-shadow-1);
 }
 
 .dropdown:hover .dropdown-menu,
@@ -128,7 +128,7 @@
         background: #fff;
         border-radius: var(--radius-sm);
         padding: var(--space-2);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+        box-shadow: var(--box-shadow-1);
         flex-direction: column;
         gap: 8px;
     }
