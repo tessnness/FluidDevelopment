@@ -1,0 +1,34 @@
+input,
+button,
+textarea {
+    width: 100%;
+}
+
+button:hover {
+    background-color: var(--color-accent);
+}
+
+button {
+    background-color: var(--color-text)
+}
+
+.contact-form-parent {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .contact-form-parent {
+        flex-direction: column;
+    }
+
+    .contact-form-parent .mt-2 {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .contact-form-parent .mt-2 {
+        width: 50%;
+    }
+}
