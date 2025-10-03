@@ -22,13 +22,23 @@ button {
         flex-direction: column;
     }
 
-    .contact-form-parent .mt-2 {
+    .contact-form-parent .text-muted {
         width: 100%;
     }
 }
 
 @media (min-width: 768px) {
-    .contact-form-parent .mt-2 {
+    .contact-form-parent .text-muted {
         width: 50%;
     }
+}
+
+
+.material-symbols {
+    font-size: 100px;
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 200,
+        'GRAD' 0,
+        'opsz' 48
 }
