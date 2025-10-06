@@ -1,8 +1,10 @@
 
 export const environment = {
   production: false,
-  apiBase: 'http"//localhost:4200/api'
+  apiBase: '/api'
 };
+
+
 // export const environment: ApplicationConfig = {
 //   production: false,
 //   application_id: 'LiveTickets',

@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MenubarModule, Menubar } from 'primeng/menubar';
 import { RouterModule } from "@angular/router";
 import { CountUpModule } from 'ngx-countup';
+import { ProjectsService } from '../../services/projects.service';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -9,7 +11,7 @@ import { CountUpModule } from 'ngx-countup';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   standalone: true,
-  imports: [RouterModule, CountUpModule,]
+  imports: [RouterModule, CountUpModule, CommonModule]
 })
 export class HomeComponent implements OnInit {
 
@@ -18,10 +20,19 @@ export class HomeComponent implements OnInit {
     useGrouping: false,
   }
 
+  projectService = inject(ProjectsService)
+
   constructor() { }
 
   ngOnInit() {
+    this.getAllProjects()
 
+  }
+
+  getAllProjects(){
+    this.projectService.list().subscribe(r => {
+      console.log(r)
+    })
   }
 
 

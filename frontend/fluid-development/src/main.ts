@@ -7,6 +7,7 @@ import Aura from '@primeng/themes/aura'
 import { provideRouter } from '@angular/router';
 import { routes } from './app/app.routes';
 import 'primeicons/primeicons.css';
+import { provideHttpClient } from '@angular/common/http';
 
 
 // bootstrapApplication(AppComponent, appConfig)
@@ -14,9 +15,10 @@ import 'primeicons/primeicons.css';
 
 bootstrapApplication(AppComponent, {
   providers: [
+    provideHttpClient(),
     provideRouter(routes),
     provideAnimationsAsync(),
     providePrimeNG({ theme: { preset: Aura }})
     
   ]
-})
+}).catch(err => console.error(err));
