@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   projectService = inject(ProjectsService)
+  projects: any;
 
   constructor() { }
 
@@ -31,6 +32,7 @@ export class HomeComponent implements OnInit {
 
   getAllProjects(){
     this.projectService.list().subscribe(r => {
+      this.projects = r;
       console.log(r)
     })
   }

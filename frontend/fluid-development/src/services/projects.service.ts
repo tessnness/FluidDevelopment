@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.development';
 
 @Injectable({ providedIn: 'root' })
 export class ProjectsService {
@@ -10,8 +10,17 @@ export class ProjectsService {
 
 
     list(q = null, category = null, status = null) {
-        return this.http.get(`${this.base}/projects${q ? `&${q}` : ``}${category ? `&${category}` : ``}${status ? `&${status}` : ``}`,);
+        return this.http.get(`${environment.apiBase}/projects${q ? `&${q}` : ``}${category ? `&${category}` : ``}${status ? `&${status}` : ``}`,);
     }
+
+    // list(q: string | null = null, category: string | null = null, status: string | null = null) {
+    //     const params: any = {};
+    //     if (q) params.q = q;
+    //     if (category) params.category = category;
+    //     if (status !== null && status !== undefined) params.status = status; // '' disables filter
+    //     return this.http.get<any[]>(`${environment.apiBase}/projects`, { params });
+    // }
+
 
     get(slug: string) {
         return this.http.get(`${this.base}/projects/${slug}`);

@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  apiBase: 'https://fluid-development.ro/api'
-}
+  apiBase: 'https://fluid-development.ro/api' 
+};
 // export const environment: ApplicationConfig = {
 //   production: true,
 //   application_id: 'LiveTickets',
