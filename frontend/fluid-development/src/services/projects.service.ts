@@ -9,8 +9,9 @@ export class ProjectsService {
     constructor(private http: HttpClient) { }
 
 
-    list(q = null, category = null, status = null) {
-        return this.http.get(`${environment.apiBase}/projects${q ? `&${q}` : ``}${category ? `&${category}` : ``}${status ? `&${status}` : ``}`,);
+    list(q: any = null, category: any = null, status: any = null, location: any = null, featured = false) {
+        return this.http.get(`${environment.apiBase}/projects?${q ? `&search=${encodeURIComponent(q)}` : ''}${category ? `&${category}` : ``}${status ? `&${status}` : ``}${location ? `&${location}` : ``}${featured ? `?featured=${featured}` : ``}`,);
+       
     }
 
     // list(q: string | null = null, category: string | null = null, status: string | null = null) {

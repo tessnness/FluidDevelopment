@@ -1,3 +1,60 @@
-<p>
-  projects-list works!
-</p>
+<section class="section-pad">
+
+  <div style="margin-top: 115px; display: flex; align-items: center; justify-content: center;">
+    <h1>PROIECTE</h1>
+
+  </div>
+
+  <div class="mt-2 text-muted">
+    Aici puteti descoperi proiectele incheiate si in desfasurare la care lucram.
+  </div>
+
+  <div class="mt-2" style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 10px;">
+    <div>
+      <form (submit)="searchNow()">
+        <div>
+          <input type="text" name="searchString" [(ngModel)]="searchString" class="form-control">
+          <span>
+            <button type="submit"><span class="material-symbols">search</span></button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <select [(ngModel)]="selectedCategory" class="form-control" name="selectedGroup">
+        <option [ngValue]="undefined">Categorie</option>
+        @for(project of projects; track project.id){
+          <option [ngValue]="project.id">{{ project.category }}</option>
+        }
+      </select>
+    </div>
+
+    <div>
+      <select class="form-control" [(ngModel)]="selectedStatus" name="registrationStatus"
+        (change)="getAllProjects()">
+        <option [ngValue]="undefined">Status
+        </option>
+        <option>Incheiate</option>
+        <option>In derulare</option>
+      </select>
+    </div>
+
+    <div>
+      <select [(ngModel)]="selectedLocation" class="form-control" name="selectedGroup">
+        <option [ngValue]="undefined">Locatie</option>
+        @for(project of projects; track project.id){
+          <option [ngValue]="project.id">{{ project.location }}</option>
+        }
+      </select>
+    </div>
+
+  </div>
+
+  <!-- filter by:
+  word search
+  category
+  status
+  location -->
+  
+</section>

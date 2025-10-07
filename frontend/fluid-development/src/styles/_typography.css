@@ -42,7 +42,8 @@
 
     input,
     button,
-    textarea {
+    textarea,
+    select {
         font-family: var(--font-sans);
         font-size: var(--fs-base);
         border-radius: var(--radius-sm);
@@ -51,11 +52,13 @@
     }
 
     input,
-    button {
+    button,
+    select {
         height: 35px;
     }
 
-    input{
+    input,
+    select {
         min-width: 150px;
     }
 

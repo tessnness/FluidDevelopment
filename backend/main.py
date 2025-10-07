@@ -136,13 +136,17 @@ def home():
     })
 
 @app.get("/projects", response_model=List[Project])
-def list_projects(q: Optional[str] = None, category: Optional[str] = None, status: Optional[str] = None):
+def list_projects(q: Optional[str] = None, category: Optional[str] = None, status: Optional[str] = None, location: Optional[str] = None, featured: Optional[bool] = False):
     data = _fetch_projects()
     out = []
     for p in data:
         if status and (p.status or "published").lower() != status.lower():
             continue
         if category and (p.category or "").lower() != category.lower():
+            continue
+        if location and (p.location or "").lower() != location.lower():
+            continue
+        if featured and p.featured != featured:
             continue
         if q:
             hay = f"{p.name} {p.description} {p.location} {p.category}".lower()
