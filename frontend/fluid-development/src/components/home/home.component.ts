@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
   }
 
   getAllProjects(){
-    this.projectService.list(null, null, null, true).subscribe(r => {
+    this.projectService.list(undefined, undefined, undefined, undefined, true).subscribe(r => {
       this.projects = r;
       console.log(r)
     })

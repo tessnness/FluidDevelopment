@@ -1,0 +1,47 @@
+.project-box {
+    position: relative;
+    overflow: hidden;
+    flex: 1 1 clamp(250px, 30%, 300px);
+    height: clamp(250px, 30vw, 300px);
+    cursor: pointer;
+}
+
+.project-box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background .2s ease;
+    z-index: 0;
+}
+
+.project-box:hover::after {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.project-box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+
+.project-details {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .2s ease, transform .2s ease;
+    z-index: 1;
+}
+
+.project-box:hover .project-details {
+    opacity: 1;
+    transform: translateY(0);
+}

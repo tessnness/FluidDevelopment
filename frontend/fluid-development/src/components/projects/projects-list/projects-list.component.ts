@@ -19,10 +19,10 @@ export class ProjectsListComponent implements OnInit {
   projects: any;
   searchString: string;
   // selectedCategory: string;
-  selectedStatus: string;
+  // selectedStatus: string;
   // selectedLocation: string;
 
-  public _selectedCategory: number;
+  public _selectedCategory: string | undefined;;
 
   public get selectedCategory() {
     return this._selectedCategory;
@@ -39,7 +39,27 @@ export class ProjectsListComponent implements OnInit {
     });
   }
 
-  public _selectedLocation: number;
+  public _selectedStatus: string | undefined;;
+
+  public get selectedStatus() {
+    return this._selectedStatus;
+  }
+
+  public set selectedStatus(value) {
+    this._selectedStatus = value;
+
+    let params = { status: value };
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: params,
+      queryParamsHandling: 'merge',
+    });
+  }
+
+
+
+
+  public _selectedLocation: string | undefined;;
 
   public get selectedLocation() {
     return this._selectedLocation;
@@ -72,6 +92,10 @@ export class ProjectsListComponent implements OnInit {
         this.searchString = res['search'];
 
       }
+      this._selectedCategory = res['category'];
+      this._selectedStatus   = res['status'];
+      this._selectedLocation = res['location'];
+
 
       this.getAllProjects()
 
@@ -79,7 +103,10 @@ export class ProjectsListComponent implements OnInit {
     })
 
   }
-
+//   list(q: any = null, category: any = null, status: any = null, location: any = null, featured = false) {
+//     return this.http.get(`${environment.apiBase}/projects${q ? `?search=${encodeURIComponent(q)}` : ''}${category ? `&${category}` : ``}${status ? `&${status}` : ``}${location ? `&${location}` : ``}${featured ? `?featured=${featured}` : ``}`,);
+   
+// }
 
   getAllProjects(){
     this.projectService.list(this.searchString, this.selectedCategory, this.selectedStatus, this.selectedLocation ).subscribe(r => {
