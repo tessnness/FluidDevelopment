@@ -3,4 +3,17 @@
     display: block;
     padding: 10px;
     position: relative;
-  }
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.back-link:hover,
+.back-link:focus {
+    text-decoration: none;
+}

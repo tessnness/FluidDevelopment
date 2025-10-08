@@ -9,15 +9,9 @@ export class ProjectsService {
     constructor(private http: HttpClient) { }
 
 
-    // list(q: any = null, category: any = null, status: any = null, location: any = null, featured = false) {
-    //     return this.http.get(`${environment.apiBase}/projects${q ? `?search=${encodeURIComponent(q)}` : ''}${category ? `&category=${category}` : ``}${status ? `&status=${status}` : ``}${location ? `&location=${location}` : ``}${featured ? `?featured=${featured}` : ``}`,);
-
-    // }
-
     list(search?: string, category?: string, status?: string, location?: string, featured?: boolean) {
         const param = new URLSearchParams();
         if (search?.trim()) param.set('q', search.trim());
-        // if (search) param.set('search', search);
         if (category) param.set('category', category);
         if (status) param.set('status', status);
         if (location) param.set('location', location);

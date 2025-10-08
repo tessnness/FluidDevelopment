@@ -26,8 +26,8 @@
       <select class="form-control" [(ngModel)]="selectedStatus" name="selectedStatus" (change)="getAllProjects()">
         <option [ngValue]="undefined">Status
         </option>
-        <option>Incheiat</option>
-        <option>In derulare</option>
+        <option>Încheiat</option>
+        <option>În derulare</option>
       </select>
     </div>
 
@@ -51,7 +51,7 @@
 
   </div>
 
-  <div class="mt-2" style="display: flex; align-items: center;">
+  <div class="mt-2" style="display: flex; align-items: center; flex-wrap: wrap;">
     @for (project of projects; track project.id) {
     <a class="project-box" [routerLink]="[project.slug]">
       <img [src]="project.images">
@@ -64,6 +64,5 @@
     </a>
     }
   </div>
-
 
 </section>

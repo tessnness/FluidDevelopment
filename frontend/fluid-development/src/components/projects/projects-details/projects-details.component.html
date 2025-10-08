@@ -1,18 +1,11 @@
 <section class="section-pad">
 
-  <span>
-    <a routerLink="/projects">
-      <div class="box">
-        <h3>
-          <a style="text-decoration: none;">
-            <span style="color: black; padding-right: 10px" class="material-symbols">chevron_backward</span> Proiecte
-          </a>
+  <a routerLink="/projects" class="back-link">
+    <span class="material-symbols" style="padding-right:10px">chevron_backward</span>
+    <span>Proiecte</span>
+  </a>
 
-        </h3>
-      </div>
-    </a>
-  </span>
-
+  
   <div style="margin-top: 115px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
     <h1>{{project.name}}</h1>
     <h3>{{project.location}}</h3>
@@ -28,8 +21,17 @@
 </section>
 
 <section class="section-pad">
+  <h3>{{project.status}}</h3>
   <div>
     {{project.description}}
   </div>
-  <div>Perioada: {{project.start_date}} - {{project.end_date}}</div>
+  <div>
+    @if(project.status == 'Încheiat'){
+      <span>Perioada: <b>{{project.start_date}} - {{project.end_date}}</b></span>
+    }
+    @else {
+      <span>Început la <b>{{project.start_date}}</b></span>
+
+    }
+  </div>
 </section>

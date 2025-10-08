@@ -9,7 +9,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, RedirectResponse
 
 
-
 # export PROJECTS_CSV_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZubpKdMoNablHbU6Q2WpuOVvUIGLnVt1_Q3douVFGUQsU88H3T2bTw4gornJXN3ap7wb9q3t4DBvC/pub?gid=0&single=true&output=csv"
 
 csv_url = os.getenv("PROJECTS_CSV_URL")
@@ -45,7 +44,7 @@ class Project(BaseModel):
     start_date: Optional[str] = None     
     end_date: Optional[str] = None        
     category: Optional[str] = ""
-    status: Optional[str] = "Incheiat"
+    status: Optional[str] = "Încheiat"
     featured: bool = False
     images: List[str] = []
     slug: str
@@ -95,7 +94,11 @@ def _fetch_projects() -> List[Project]:
     if r.status_code != 200:
         raise HTTPException(502, "Failed to fetch Google Sheets CSV")
     
-    reader = csv.DictReader(io.StringIO(r.text))
+    # reader = csv.DictReader(io.StringIO(r.text))
+    text = r.content.decode("utf-8-sig", errors="replace")
+    reader = csv.DictReader(io.StringIO(text))
+
+    
     items: List[Project] = []
     for row in reader:
         images_raw = (row.get("Images") or "").strip()
@@ -110,7 +113,7 @@ def _fetch_projects() -> List[Project]:
             start_date=_parse_date(row.get("Start Date")),
             end_date=_parse_date(row.get("End Date")),
             category=(row.get("Category") or "").strip(),
-            status=(row.get("Status") or "Incheiat").strip() or "Incheiat",
+            status=(row.get("Status") or "Încheiat").strip() or "Încheiat",
             featured=_to_bool(row.get("Featured")),
             images=images,
             slug=slug,
@@ -140,7 +143,7 @@ def list_projects(q: Optional[str] = None, category: Optional[str] = None, statu
     data = _fetch_projects()
     out = []
     for p in data:
-        if status and (p.status or "Incheiat").lower() != status.lower():
+        if status and (p.status or "Încheiat").lower() != status.lower():
             continue
         if category and (p.category or "").lower() != category.lower():
             continue

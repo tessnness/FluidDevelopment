@@ -19,9 +19,6 @@ export class ProjectsListComponent implements OnInit {
 
   projects: any;
   searchString: string;
-  // selectedCategory: string;
-  // selectedStatus: string;
-  // selectedLocation: string;
 
   public _selectedCategory: string | undefined;;
 
@@ -57,9 +54,6 @@ export class ProjectsListComponent implements OnInit {
     });
   }
 
-
-
-
   public _selectedLocation: string | undefined;;
 
   public get selectedLocation() {
@@ -78,7 +72,7 @@ export class ProjectsListComponent implements OnInit {
   }
 
 
-  
+
   constructor() { }
 
   ngOnInit() {
@@ -86,15 +80,13 @@ export class ProjectsListComponent implements OnInit {
       // if (res['pageNo']) {
       //   this.sortingPagingCriteria.pageNumber = res["pageNo"] ? parseInt(res["pageNo"]) : 1;
       // }
-      // if (res["tagId"]) {
-      //   this.tagId = res["tagId"]
-      // }
+
       if (res["search"]) {
         this.searchString = res['search'];
 
       }
       this._selectedCategory = res['category'];
-      this._selectedStatus   = res['status'];
+      this._selectedStatus = res['status'];
       this._selectedLocation = res['location'];
 
 
@@ -104,13 +96,10 @@ export class ProjectsListComponent implements OnInit {
     })
 
   }
-//   list(q: any = null, category: any = null, status: any = null, location: any = null, featured = false) {
-//     return this.http.get(`${environment.apiBase}/projects${q ? `?search=${encodeURIComponent(q)}` : ''}${category ? `&${category}` : ``}${status ? `&${status}` : ``}${location ? `&${location}` : ``}${featured ? `?featured=${featured}` : ``}`,);
-   
-// }
 
-  getAllProjects(){
-    this.projectService.list(this.searchString, this.selectedCategory, this.selectedStatus, this.selectedLocation ).subscribe(r => {
+
+  getAllProjects() {
+    this.projectService.list(this.searchString, this.selectedCategory, this.selectedStatus, this.selectedLocation).subscribe(r => {
       this.projects = r;
       console.log(r)
     })

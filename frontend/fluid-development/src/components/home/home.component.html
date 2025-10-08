@@ -42,7 +42,7 @@
       <div class="carousel-item">
         <div class="material-symbols icon">water_pump</div>
         <div style="height: 30%;">
-          <h2>PROIECTE INCHEIATE</h2>
+          <h2>PROIECTE ÎNCHEIATE</h2>
           <h2 style="text-align: center;"><span [countUp]="70" [options]="countOpts">0</span></h2>
 
         </div>
@@ -51,7 +51,7 @@
       <div class="carousel-item">
         <div class="material-symbols icon">engineering</div>
         <div style="height: 30%;">
-          <h2>PROIECTE IN DERULARE</h2>
+          <h2>PROIECTE ÎN DERULARE</h2>
           <h2 style="text-align: center;"><span [countUp]="4" [options]="countOpts">0</span></h2>
 
         </div>
@@ -114,17 +114,15 @@
 
     <div style="display: flex; flex-wrap: wrap;">
       @for (project of projects; track project.id) {
-        @if(project.featured){
-          <div class="project-home">
-            <!-- <img [src]="project.images.startsWith('http') || project.images.startsWith('/') ? project.images : '/assets/projects/' + project.images"> -->
-
-            <img [src]="project.images">
-            <div class="project-home-details">
-              <div class="project-home-title">{{project.name}}</div>
-              <div class="project-home-subtitle">{{project.location}}</div>
-            </div>
-          </div>
-        }
+      @if(project.featured){
+      <div class="project-home">
+        <img [src]="project.images ? project.images : 'assets/projects/default-construction.jpg'">
+        <div class="project-home-details">
+          <div class="project-home-title">{{project.name}}</div>
+          <div class="project-home-subtitle">{{project.location}}</div>
+        </div>
+      </div>
+      }
 
       }
 

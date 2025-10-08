@@ -17,9 +17,9 @@ import { AsyncPipe } from '@angular/common';
 })
 export class MasterPageComponent implements OnInit {
 
-  private router = inject(Router);  // ← defined first
+  private router = inject(Router); 
 
-  isHome$ = this.router.events.pipe( // ← now safe to use
+  isHome$ = this.router.events.pipe(
     filter((e): e is NavigationEnd => e instanceof NavigationEnd),
     map(e => e.urlAfterRedirects === '/'),
     startWith(this.router.url === '/')
