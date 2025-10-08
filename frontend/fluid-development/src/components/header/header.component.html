@@ -1,28 +1,28 @@
 <div class="box" style="z-index: 2; display: flex; align-items: center; ">
   <div>
-    <img src="assets/img/beyonce.png" style="width: 100px; height: 50px;">
+    <img routerLink="/" src="assets/img/beyonce.png" style="width: 100px; height: 50px;">
   </div>
 
-  <input id="nav-toggle" type="checkbox" class="nav-toggle">
+  <input id="nav-toggle" type="checkbox" class="nav-toggle" #navToggle>
   <label for="nav-toggle" class="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </label>
 
 
   <div class="menu-parent">
-    <a routerLink="/" class="menu-item">ACASǍ
+    <a routerLink="/" class="menu-item" (click)="navToggle.checked=false">ACASǍ
     </a>
-    <a routerLink="/about" class="menu-item">DESPRE
+    <a routerLink="/about" class="menu-item" (click)="navToggle.checked=false">DESPRE
     </a>
     <div class="dropdown">
-      <a routerLink="/projects" class="menu-item">PROIECTE</a>
+      <a routerLink="/projects" class="menu-item" (click)="navToggle.checked=false">PROIECTE</a>
       <span class="dropdown-trigger material-symbols">arrow_drop_down</span>
       <ul class="dropdown-menu" role="menu">
-        <li routerLink="/projects" [queryParams]="{ status: 'in-progress' }" class="project-link">In progress</li>
-        <li routerLink="/projects" [queryParams]="{ status: 'done' }" class="project-link">Incheiate</li>
+        <li routerLink="/projects" [queryParams]="{ status: 'in-progress' }" class="project-link" (click)="navToggle.checked=false">In progress</li>
+        <li routerLink="/projects" [queryParams]="{ status: 'done' }" class="project-link" (click)="navToggle.checked=false">Incheiate</li>
       </ul>
     </div>
-    <a routerLink="/contact" class="menu-item">CONTACT
+    <a routerLink="/contact" class="menu-item" (click)="navToggle.checked=false">CONTACT
     </a>
   </div>
 </div>

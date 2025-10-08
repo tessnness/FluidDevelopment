@@ -1,3 +1,35 @@
-<p>
-  projects-details works!
-</p>
+<section class="section-pad">
+
+  <span>
+    <a routerLink="/projects">
+      <div class="box">
+        <h3>
+          <a style="text-decoration: none;">
+            <span style="color: black; padding-right: 10px" class="material-symbols">chevron_backward</span> Proiecte
+          </a>
+
+        </h3>
+      </div>
+    </a>
+  </span>
+
+  <div style="margin-top: 115px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+    <h1>{{project.name}}</h1>
+    <h3>{{project.location}}</h3>
+  </div>
+
+
+</section>
+
+<section>
+  <div style="width: 100%;">
+    <img [src]="project.images" style="width: 100%; object-fit: cover;">
+  </div>
+</section>
+
+<section class="section-pad">
+  <div>
+    {{project.description}}
+  </div>
+  <div>Perioada: {{project.start_date}} - {{project.end_date}}</div>
+</section>

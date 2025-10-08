@@ -16,7 +16,8 @@ export class ProjectsService {
 
     list(search?: string, category?: string, status?: string, location?: string, featured?: boolean) {
         const param = new URLSearchParams();
-        if (search) param.set('search', search);
+        if (search?.trim()) param.set('q', search.trim());
+        // if (search) param.set('search', search);
         if (category) param.set('category', category);
         if (status) param.set('status', status);
         if (location) param.set('location', location);
@@ -25,7 +26,7 @@ export class ProjectsService {
     }
 
 
-    get(slug: string) {
+    getDetails(slug: string) {
         return this.http.get(`${this.base}/projects/${slug}`);
     }
 

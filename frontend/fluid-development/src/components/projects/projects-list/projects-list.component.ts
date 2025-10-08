@@ -2,13 +2,14 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ProjectsService } from '../../../services/projects.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { RouterLink, RouterModule } from "@angular/router";
 
 @Component({
   selector: 'app-projects-list',
   templateUrl: './projects-list.component.html',
   styleUrls: ['./projects-list.component.css'],
   standalone: true,
-  imports: [FormsModule]
+  imports: [FormsModule, RouterLink, RouterModule]
 })
 export class ProjectsListComponent implements OnInit {
 
