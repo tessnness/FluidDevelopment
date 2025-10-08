@@ -34,12 +34,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    flex-direction: column;
     opacity: 0;
     transform: translateY(8px);
     transition: opacity .2s ease, transform .2s ease;
     z-index: 1;
 }
+
+.project-details h2, .project-details span {
+    color: #fff;
+}
+
 
 .project-box:hover .project-details {
     opacity: 1;

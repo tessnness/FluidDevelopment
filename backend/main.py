@@ -45,7 +45,7 @@ class Project(BaseModel):
     start_date: Optional[str] = None     
     end_date: Optional[str] = None        
     category: Optional[str] = ""
-    status: Optional[str] = "published"
+    status: Optional[str] = "Incheiat"
     featured: bool = False
     images: List[str] = []
     slug: str
@@ -110,7 +110,7 @@ def _fetch_projects() -> List[Project]:
             start_date=_parse_date(row.get("Start Date")),
             end_date=_parse_date(row.get("End Date")),
             category=(row.get("Category") or "").strip(),
-            status=(row.get("Status") or "published").strip() or "published",
+            status=(row.get("Status") or "Incheiat").strip() or "Incheiat",
             featured=_to_bool(row.get("Featured")),
             images=images,
             slug=slug,
@@ -140,7 +140,7 @@ def list_projects(q: Optional[str] = None, category: Optional[str] = None, statu
     data = _fetch_projects()
     out = []
     for p in data:
-        if status and (p.status or "published").lower() != status.lower():
+        if status and (p.status or "Incheiat").lower() != status.lower():
             continue
         if category and (p.category or "").lower() != category.lower():
             continue
