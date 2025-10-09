@@ -23,4 +23,8 @@ export class ProjectsService {
         return this.http.get(`${environment.apiBase}/projects/${slug}`);
     }
 
+    sendMessage(body: any){
+        return this.http.post(`${environment.apiBase}/contact`, body)
+    }
+
 }

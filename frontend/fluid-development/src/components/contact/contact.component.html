@@ -6,7 +6,8 @@
   </div>
 
   <div class="mt-2 text-muted">
-    Pentru a ne trimite un mesaj te rugam sa completezi formularul online si vom raspunde in cel mai scurt timp. Alternativ, poti contacta sa ne scrii un email la officefluiddevelopment.ro
+    Pentru a ne trimite un mesaj te rugam sa completezi formularul online si vom raspunde in cel mai scurt timp.
+    Alternativ, poti contacta sa ne scrii un email la officefluiddevelopment.ro
   </div>
 
   <div class="contact-form-parent">
@@ -17,11 +18,11 @@
           Bdul. Tomis 143A Et. 5, Constanta
         </div>
         <div>
-            Telefon: 
-            +40729994764
+          Telefon:
+          +40729994764
         </div>
       </div>
-      
+
     </div>
 
     <div style="margin: var(--space-3);
@@ -30,27 +31,40 @@
       <div>Iti stam la dispozitie si iti vom raspunde in cel mai scurt timp. Trimite-ne o solicitare, spune-ne daca ai
         nevoie de ajutor sau vrei sa faci o comanda.</div>
 
-      <div style="margin-top: 20px;">
-        <div>
-          <label>Email</label>
-          <br>
-          <input type="text" id="email" name="email" required minlength="4" />
+      <form #f="ngForm" (ngSubmit)="submit()" style="margin-top: 20px;">
+        <div style="margin-top: 20px;">
+          <div>
+            <label>Email</label>
+            <br>
+            <input type="text" id="email" name="email" required minlength="4" />
+          </div>
+          <div>
+            <label>Nume</label><br>
+            <input type="text" id="name" name="name" required minlength="4" maxlength="20" />
+          </div>
+          <div style="margin: 10px 0;">
+            <label>Mesaj</label><br>
+            <textarea style="height: 200px;"></textarea>
+          </div>
         </div>
-        <div>
-          <label>Nume</label><br>
-          <input type="text" id="name" name="name" required minlength="4" maxlength="20" />
-        </div>
-        <div style="margin: 10px 0;">
-          <label>Mesaj</label><br>
-          <textarea style="height: 200px;"></textarea>
-        </div>
-      </div>
 
 
+        <div style="margin:10px 0">
+          <button [disabled]="f.invalid || loading" style="font-weight:bold;">
+            {{ loading ? 'Trimit...' : 'Trimite' }}
+          </button>
+        </div>
 
-      <div style="margin: 10px 0;">
-        <button style="font-weight: bold; ">Trimite</button>
-      </div>
+        @if(success){
+        <p style="color:green;margin-top:8px">Mulțumim! Mesajul a fost trimis.</p>
+        }
+
+        @if(error){
+        <p style="color:#b00020;margin-top:8px">Ne pare rău, a apărut o eroare. Încearcă din nou.</p>
+
+        }
+
+      </form>
     </div>
 
   </div>

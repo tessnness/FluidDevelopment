@@ -1,7 +1,12 @@
 {
     "rewrites": [
-      { "source": "/api/(.*)", "destination": "https://fluid-development.vercel.app/api/$1" },
-      { "source": "/(.*)", "destination": "/index.html" }
+        {
+            "source": "/api/(.*)",
+            "destination": "https://fluid-development.vercel.app/api/$1"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
     ]
-  }
-  
+}

@@ -216,30 +216,44 @@
       </div>
     </div>
 
-    <div style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 100%;">
-      <h1>Contacteaza-ne</h1>
-      <h2>Ai intrebari sau remarci? Scrie-ne un mesaj!</h2>
+    <div>
+      <form #f="ngForm" (ngSubmit)="submit()"
+        style="display:flex;align-items:center;justify-content:center;flex-direction:column;width:100%;max-width:720px;margin:0 auto">
+        <h1>Contacteaza-ne</h1>
+        <h2>Ai intrebari sau remarci? Scrie-ne un mesaj!</h2>
 
-      <div style="display: flex; gap: 10px; margin: 10px 0;">
-        <div>
-          <label>Email</label>
-          <br>
-          <input type="text" id="email" name="email" required minlength="4" />
+        <div style="display: flex; gap: 10px; margin: 10px 0;">
+          <div>
+            <label>Email</label>
+            <br>
+            <input type="text" id="email" name="email" required minlength="4" />
+          </div>
+          <div>
+            <label>Nume</label><br>
+            <input type="text" id="name" name="name" required minlength="4" maxlength="20" />
+          </div>
         </div>
-        <div>
-          <label>Nume</label><br>
-          <input type="text" id="name" name="name" required minlength="4" maxlength="20" />
+
+        <div style="margin: 10px 0;">
+          <label>Mesaj</label><br>
+          <textarea style="height: 200px;"></textarea>
         </div>
-      </div>
 
-      <div style="margin: 10px 0;">
-        <label>Mesaj</label><br>
-        <textarea style="height: 200px;"></textarea>
-      </div>
+        <div style="margin:10px 0">
+          <button [disabled]="f.invalid || loading" style="font-weight:bold;">
+            {{ loading ? 'Trimit...' : 'Trimite' }}
+          </button>
+        </div>
 
-      <div style="margin: 10px 0;">
-        <button style="font-weight: bold;">Trimite</button>
-      </div>
+        @if(success){
+        <p style="color:green;margin-top:8px">Mulțumim! Mesajul a fost trimis.</p>
+        }
+
+        @if(error){
+        <p style="color:#b00020;margin-top:8px">Ne pare rău, a apărut o eroare. Încearcă din nou.</p>
+
+        }
+      </form>
 
     </div>
 

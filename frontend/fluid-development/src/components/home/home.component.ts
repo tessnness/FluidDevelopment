@@ -3,6 +3,8 @@ import { RouterModule } from "@angular/router";
 import { CountUpModule } from 'ngx-countup';
 import { ProjectsService } from '../../services/projects.service';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 
 
 @Component({
@@ -10,7 +12,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   standalone: true,
-  imports: [RouterModule, CountUpModule, CommonModule]
+  imports: [RouterModule, CountUpModule, CommonModule, FormsModule]
 })
 export class HomeComponent implements OnInit {
 
@@ -22,6 +24,11 @@ export class HomeComponent implements OnInit {
   projectService = inject(ProjectsService)
   projects: any;
 
+  form = { name: '', email: '', message: '' };
+  loading = false;
+  success = false;
+  error = false;
+
   constructor() { }
 
   ngOnInit() {
@@ -29,11 +36,33 @@ export class HomeComponent implements OnInit {
 
   }
 
-  getAllProjects(){
+  getAllProjects() {
     this.projectService.list(undefined, undefined, undefined, undefined, true).subscribe(r => {
       this.projects = r;
       console.log(r)
     })
+  }
+
+  submit() {
+    this.success = this.error = false;
+    this.loading = true;
+
+    const body = new FormData();
+    body.set('name', this.form.name.trim());
+    body.set('email', this.form.email.trim());
+    body.set('message', this.form.message.trim());
+
+    this.projectService.sendMessage(body).subscribe({
+      next: () => {
+        this.loading = false;
+        this.success = true;
+        this.form = { name: '', email: '', message: '' };
+      },
+      error: () => {
+        this.loading = false;
+        this.error = true;
+      }
+    });
   }
 
 
