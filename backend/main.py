@@ -6,7 +6,10 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, RedirectResponse
-
+from fastapi import Form
+import smtplib, ssl, os
+from email.message import EmailMessage
+import re
 
 # export PROJECTS_CSV_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZubpKdMoNablHbU6Q2WpuOVvUIGLnVt1_Q3douVFGUQsU88H3T2bTw4gornJXN3ap7wb9q3t4DBvC/pub?gid=0&single=true&output=csv"
 
@@ -163,6 +166,47 @@ def get_project(slug: str):
         if p.slug == slug:
             return p
     raise HTTPException(404, "Project not found")
+
+
+SMTP_HOST = os.getenv("SMTP_HOST")         # e.g. "smtp.office365.com"
+SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
+SMTP_USER = os.getenv("SMTP_USER")         # e.g. "office@fluiddevelopment.ro"
+SMTP_PASS = os.getenv("SMTP_PASS")
+CONTACT_TO = os.getenv("CONTACT_TO", SMTP_USER)   # where to deliver (office inbox)
+CONTACT_FROM = os.getenv("CONTACT_FROM", SMTP_USER)  # the authenticated sender
+
+EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
+
+@app.post("/contact")
+def contact(name: str = Form(...), email: str = Form(...), message: str = Form(...)):
+    # Basic guards
+    name = (name or "").strip()
+    email = (email or "").strip()
+    message = (message or "").strip()
+
+    if not EMAIL_RE.match(email):
+        raise HTTPException(400, "Email invalid")
+    if not (1 <= len(name) <= 80):
+        raise HTTPException(400, "Nume invalid")
+    if not (1 <= len(message) <= 5000):
+        raise HTTPException(400, "Mesaj prea scurt/lung")
+
+    # Build message
+    msg = EmailMessage()
+    msg["Subject"] = f"[Contact] {name}"
+    msg["From"] = CONTACT_FROM         # must match authenticated mailbox for most SMTP providers
+    msg["To"] = CONTACT_TO
+    msg["Reply-To"] = email            # replies go to the sender
+    msg.set_content(f"Nume: {name}\nEmail: {email}\n\n{message}")
+
+    # Send
+    context = ssl.create_default_context()
+    with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=15) as s:
+        s.starttls(context=context)
+        s.login(SMTP_USER, SMTP_PASS)
+        s.send_message(msg)
+
+    return {"ok": True}
 
 
 
