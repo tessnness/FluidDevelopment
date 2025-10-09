@@ -29,7 +29,7 @@
               }
             ],
             "styles": [
-              "src/assets/Fonts/material-symbols/material-symbols.css",
+              "src/assets/fonts/material-symbols/material-symbols.css",
               "src/styles.css"
             ],
             "scripts": [],
