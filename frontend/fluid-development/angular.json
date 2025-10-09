@@ -30,7 +30,6 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "outputMode": "static",
             "outputPath": "dist/fluid-development",
             "index": "src/index.html",
             "browser": "src/main.ts"
