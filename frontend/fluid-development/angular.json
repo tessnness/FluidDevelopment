@@ -29,7 +29,6 @@
               }
             ],
             "styles": [
-              "node_modules/primeicons/primeicons.css",
               "src/assets/fonts/material-symbols/material-symbols.css",
               "src/styles.css"
             ],

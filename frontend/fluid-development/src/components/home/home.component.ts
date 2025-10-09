@@ -1,5 +1,4 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { MenubarModule, Menubar } from 'primeng/menubar';
 import { RouterModule } from "@angular/router";
 import { CountUpModule } from 'ngx-countup';
 import { ProjectsService } from '../../services/projects.service';
