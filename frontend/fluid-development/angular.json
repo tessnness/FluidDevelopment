@@ -11,8 +11,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "outputPath": "dist/fluid-development",
+            "index": "src/index.html",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -29,10 +32,7 @@
               "src/assets/fonts/material-symbols/material-symbols.css",
               "src/styles.css"
             ],
-            "scripts": [],
-            "outputPath": "dist/fluid-development",
-            "index": "src/index.html",
-            "browser": "src/main.ts"
+            "scripts": []
           },
           "configurations": {
             "production": {
