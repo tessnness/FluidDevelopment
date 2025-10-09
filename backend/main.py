@@ -1,5 +1,4 @@
 from pathlib import Path
-import pandas as pd, re
 import uuid, os, time, csv, io, requests
 from datetime import datetime
 from typing import List, Optional
