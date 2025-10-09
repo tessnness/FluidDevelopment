@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '../environments/environment.development';
+import { environment } from '../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class ProjectsService {
@@ -19,9 +19,8 @@ export class ProjectsService {
         return this.http.get<any[]>(`${environment.apiBase}/projects${param.toString() ? `?${param}` : ''}`);
     }
 
-
     getDetails(slug: string) {
-        return this.http.get(`${this.base}/projects/${slug}`);
+        return this.http.get(`${environment.apiBase}/projects/${slug}`);
     }
 
 }
