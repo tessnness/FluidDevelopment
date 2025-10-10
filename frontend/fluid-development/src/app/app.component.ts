@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SeoService } from '../services/seo.service';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ],
+  imports: [RouterOutlet,],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   template: `<router-outlet></router-outlet>`,
   standalone: true,
 })
 export class AppComponent {
-  title = 'fluid-development';
+
+  constructor(seo: SeoService) { seo.init(); }
 }
