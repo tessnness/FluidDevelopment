@@ -21,9 +21,14 @@ _cache = { "ts": 0, "items": []}
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:4200", "http://127.0.0.1:4200"],
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=[
+        "https://fluid-development-frontend.vercel.app",  
+        "http://localhost:4200",                          
+        "http://127.0.0.1:4200",
+    ],
+    allow_credentials=False,
+    allow_methods=["*"],  
+    allow_headers=["*"],  
 )
 
 DATE_FORMATS = (
