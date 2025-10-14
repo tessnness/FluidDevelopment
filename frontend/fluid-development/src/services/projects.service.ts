@@ -16,15 +16,15 @@ export class ProjectsService {
         if (status) param.set('status', status);
         if (location) param.set('location', location);
         if (featured) param.set('featured', 'true');
-        return this.http.get<any[]>(`${environment.apiBase}/projects${param.toString() ? `?${param}` : ''}`);
+        return this.http.get<any[]>(`${this.base}/projects${param.toString() ? `?${param}` : ''}`);
     }
 
     getDetails(slug: string) {
-        return this.http.get(`${environment.apiBase}/projects/${slug}`);
+        return this.http.get(`${this.base}/projects/${slug}`);
     }
 
     sendMessage(body: any){
-        return this.http.post(`${environment.apiBase}/contact`, body)
+        return this.http.post(`${this.base}/contact`, body)
     }
 
 }

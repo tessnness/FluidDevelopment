@@ -1,8 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { NavigationEnd } from '@angular/router';
-import { Router } from 'express';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs';
 
 @Injectable({
@@ -25,7 +24,7 @@ export class SeoService {
 
   init() {
     this.router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe(() => {
-      const route = this.getLeaf(this.router.routerStare.root);
+      const route = this.getLeaf(this.router.routerState.root);
       const data = route.snapshot.data || {};
 
       if (route.snapshot.title) {

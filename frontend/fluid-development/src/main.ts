@@ -5,10 +5,13 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideRouter } from '@angular/router';
 import { routes } from './app/app.routes';
 import { provideHttpClient } from '@angular/common/http';
+import { inject as injectVercelAnalytics } from '@vercel/analytics'
 
 
 // bootstrapApplication(AppComponent, appConfig)
 //   .catch((err) => console.error(err));
+
+injectVercelAnalytics();
 
 bootstrapApplication(AppComponent, {
   providers: [
