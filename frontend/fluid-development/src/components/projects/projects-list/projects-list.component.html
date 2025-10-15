@@ -9,50 +9,52 @@
     Aici puteti descoperi proiectele incheiate si in desfasurare la care lucram.
   </div>
 
-  <div class="mt-2"
-    style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 20px; width: 100%;">
+  <div class="mt-2 project-filters">
     <div style="flex-grow: 1;">
       <form (submit)="searchNow()">
         <div>
           <input type="text" name="searchString" [(ngModel)]="searchString" class="form-control" style="width: 100%;">
           <span (click)="searchNow()" style="margin-left: -30px; color: black; cursor: pointer;"
             class="material-symbols">search</span>
-
         </div>
       </form>
     </div>
 
-    <div>
-      <select class="form-control" [(ngModel)]="selectedStatus" name="selectedStatus" (change)="getAllProjects()">
-        <option [ngValue]="undefined">Status
-        </option>
-        <option>Încheiat</option>
-        <option>În derulare</option>
-      </select>
-    </div>
+    <div class="project-filters-group">
+
+      <div>
+        <select class="form-control" [(ngModel)]="selectedStatus" name="selectedStatus" (change)="getAllProjects()">
+          <option [ngValue]="undefined">Status
+          </option>
+          <option>Încheiat</option>
+          <option>În derulare</option>
+        </select>
+      </div>
 
 
-    <div>
-      <select [(ngModel)]="selectedCategory" class="form-control" name="selectedCategory">
-        <option [ngValue]="undefined">Categorie</option>
-        @for (c of categories; track c) {
+      <div>
+        <select [(ngModel)]="selectedCategory" class="form-control" name="selectedCategory">
+          <option [ngValue]="undefined">Categorie</option>
+          @for (c of categories; track c) {
           <option [ngValue]="c">{{ c }}</option>
-        }
-      </select>
+          }
+        </select>
+      </div>
+
+      <div>
+        <select [(ngModel)]="selectedLocation" class="form-control" name="selectedLocation">
+          <option [ngValue]="undefined">Locatie</option>
+          @for (l of locations; track l) {
+          <option [ngValue]="l">{{ l }}</option>
+          }
+        </select>
+      </div>
     </div>
 
-    <div>
-      <select [(ngModel)]="selectedLocation" class="form-control" name="selectedLocation">
-        <option [ngValue]="undefined">Locatie</option>
-        @for (l of locations; track l) {
-          <option [ngValue]="l">{{ l }}</option>
-        }
-      </select>
-    </div>
 
   </div>
 
-  <div class="project-wrap mt-2" >
+  <div class="project-wrap mt-2">
     @for (project of projects; track project.id) {
     <a class="project-box" [routerLink]="[project.slug]">
       <img [src]="project.images">

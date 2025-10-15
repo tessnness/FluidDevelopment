@@ -1,3 +1,20 @@
+.project-filters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.project-filters-group {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+
+}
+
+
 .project-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -30,17 +47,41 @@
 }
 
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .project-box {
     flex-basis: calc((100% - 20px)/2);
     max-width: calc((100% - 20px)/2);
   }
-}
+} */
 
-@media (max-width: 640px) {
+@media (max-width: 767px) {
   .project-box {
     flex-basis: 100%;
     max-width: 100%;
+  }
+
+  .project-filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .project-filters-group {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .project-filters-group>div {
+    flex: 1 1 0;
+  }
+
+  .project-filters-group .form-control {
+    width: 100%;
+  }
+
+  select{
+    min-width: 30px !important;
   }
 }
 
