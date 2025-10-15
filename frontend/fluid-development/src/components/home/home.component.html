@@ -1,15 +1,15 @@
 <main class="snap-y">
 
   <section class="section-pad hero-full">
-    <div class="hero" style="position: relative; width: 100%;">
-      <div style="position: absolute; inset: 0;">
+    <div class="hero">
+      <div class="hero-image-wrapper">
         <img src="assets/img/fluid-hero.png" alt="hero-image" class="hero-image">
       </div>
     </div>
   </section>
 
   <section class="section-pad about-full">
-    <header style="display: flex; align-items: center;">
+    <header>
       <h1>Despre noi</h1>
 
       <div style="margin-left: auto;">
@@ -22,9 +22,9 @@
     <main class="carousel-parent">
       <div class="carousel-item">
         <div class="material-symbols icon">home</div>
-        <div style="height: 30%;">
+        <div class="carousel-text">
           <h2>FONDAT IN</h2>
-          <h2 style="text-align: center;"><span style="display: inline-block;" [countUp]="2000"
+          <h2><span [countUp]="2000"
               [options]="countOpts">0</span></h2>
 
         </div>
@@ -32,34 +32,34 @@
 
       <div class="carousel-item">
         <div class="material-symbols icon">map</div>
-        <div style="height: 30%;">
+        <div class="carousel-text">
           <h2>PREZENTI IN</h2>
-          <h2 style="text-align: center;"><span [countUp]="9" [options]="countOpts">0</span> ORASE</h2>
+          <h2><span [countUp]="9" [options]="countOpts">0</span> ORASE</h2>
 
         </div>
       </div>
 
       <div class="carousel-item">
         <div class="material-symbols icon">water_pump</div>
-        <div style="height: 30%;">
+        <div class="carousel-text">
           <h2>PROIECTE ÎNCHEIATE</h2>
-          <h2 style="text-align: center;"><span [countUp]="70" [options]="countOpts">0</span></h2>
+          <h2><span [countUp]="70" [options]="countOpts">0</span></h2>
 
         </div>
       </div>
 
       <div class="carousel-item">
         <div class="material-symbols icon">engineering</div>
-        <div style="height: 30%;">
+        <div class="carousel-text">
           <h2>PROIECTE ÎN DERULARE</h2>
-          <h2 style="text-align: center;"><span [countUp]="4" [options]="countOpts">0</span></h2>
+          <h2><span [countUp]="4" [options]="countOpts">0</span></h2>
 
         </div>
       </div>
 
       <div class="carousel-item">
         <div class="material-symbols icon">diversity_3</div>
-        <div style="height: 30%;">
+        <div class="carousel-text">
           <h2>ECHIPA DE</h2>
           <h2 style="text-align: center;"><span [countUp]="55" [options]="countOpts">0</span> angajati</h2>
 
@@ -68,9 +68,9 @@
 
       <div class="carousel-item">
         <div class="material-symbols icon">domain</div>
-        <div style="height: 30%;">
+        <div class="carousel-text">
           <h2>SUPRAFATA LUCRATA</h2>
-          <h2 style="text-align: center;"><span [countUp]="120" [options]="countOpts">0</span> mp</h2>
+          <h2><span [countUp]="120" [options]="countOpts">0</span> mp</h2>
 
         </div>
       </div>
@@ -112,7 +112,7 @@
       </div>
     </div>
 
-    <div style="display: flex; flex-wrap: wrap;">
+    <div class="projects-wrapper">
       @for (project of projects; track project.id) {
       @if(project.featured){
       <div class="project-home">
@@ -130,85 +130,32 @@
 
 
     </div>
-
-    <!-- <div style="display: flex; flex-wrap: wrap;">
-
-      <div class="project-home">
-        <img src="assets/img/construction-site-1.jpg">
-        <div class="project-home-details">
-          <div class="project-home-title">Titlu proiect 1 nume lung super lung</div>
-          <div class="project-home-subtitle">Constanta</div>
-        </div>
-      </div>
-
-      <div class="project-home">
-        <img src="assets/img/construction-site-2.jpg">
-        <div class="project-home-details">
-          <div class="project-home-title">Titlu proiect 2</div>
-          <div class="project-home-subtitle">Tulcea</div>
-        </div>
-      </div>
-
-      <div class="project-home">
-        <img src="assets/img/construction-site-3.jpg">
-        <div class="project-home-details">
-          <div class="project-home-title">Titlu proiect 3</div>
-          <div class="project-home-subtitle">Brasov</div>
-        </div>
-      </div>
-
-      <div class="project-home">
-        <img src="assets/img/construction-site-4.jpg">
-        <div class="project-home-details">
-          <div class="project-home-title">Titlu proiect 4</div>
-          <div class="project-home-subtitle">Constanta</div>
-        </div>
-      </div>
-
-      <div class="project-home">
-        <img src="assets/img/construction-site-5.jpg">
-        <div class="project-home-details">
-          <div class="project-home-title">Titlu proiect 5</div>
-          <div class="project-home-subtitle">Constanta</div>
-        </div>
-      </div>
-
-      <div class="project-home">
-        <img src="assets/img/construction-site-6.jpg">
-        <div class="project-home-details">
-          <div class="project-home-title">Titlu proiect 6</div>
-          <div class="project-home-subtitle">Braila</div>
-        </div>
-      </div>
-
-    </div> -->
   </section>
 
   <section class="section-pad partners-full">
-    <div style="flex: 0 0 auto;
-  margin-bottom: var(--space-4);">
+    <div class="partners-wrap">
       <h1>Parteneri</h1>
     </div>
     <div class="partners-grid">
       <div class="partner-info">
-        <img src="assets/img/beyonce.png" style="width: 100px; height: 50px; object-fit: contain;">
+        <img src="assets/img/beyonce.png">
         <h2>Fluid Serv Metrologie</h2>
       </div>
 
       <div class="partner-info">
-        <img src="assets/img/beyonce.png" style="width: 100px; height: 50px;">
+        <img src="assets/img/beyonce.png">
         <h2>General Hidroedil</h2>
       </div>
 
       <div class="partner-info">
-        <img src="assets/img/beyonce.png" style="width: 100px; height: 50px;">
+        <img src="assets/img/beyonce.png">
         <h2>Strolz Drilling</h2>
       </div>
     </div>
   </section>
 
   <section class="section-pad contact-full">
-    <div style="display: flex; align-items: center; justify-content: center;">
+    <div class="contact-title">
       <h1>Contact</h1>
       <div style="margin-left: auto;">
         <a routerLink="/contact" class="link-muted">Vezi mai mult <span
@@ -217,11 +164,10 @@
     </div>
 
     <div>
-      <form #f="ngForm" (ngSubmit)="submit()"
-        style="display:flex;align-items:center;justify-content:center;flex-direction:column;width:100%;max-width:720px;margin:0 auto">
+      <form #f="ngForm" (ngSubmit)="submit()" class="contact-form">
         <h2>Ai intrebari sau remarci? Scrie-ne un mesaj!</h2>
 
-        <div style="display: flex; gap: 10px; margin: 10px 0;">
+        <div class="contact-form-info">
           <div>
             <label>Email</label>
             <br>
@@ -235,7 +181,8 @@
 
         <div style="margin: 10px 0;">
           <label>Mesaj</label><br>
-          <textarea id="message" name="message" required minlength="1" maxlength="5000" [(ngModel)]="form.message" style="height: 200px;"></textarea>
+          <textarea id="message" name="message" required minlength="1" maxlength="5000" [(ngModel)]="form.message"
+            style="height: 200px;"></textarea>
         </div>
 
         <div style="margin:10px 0">

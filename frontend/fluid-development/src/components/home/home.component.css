@@ -5,6 +5,8 @@
 
 .hero {
     height: 100vh;
+    position: relative;
+    width: 100%;
 }
 
 .hero>* {
@@ -67,6 +69,11 @@
     }
 }
 
+.hero-image-wrapper {
+    position: absolute;
+    inset: 0;
+}
+
 .hero-image {
     position: absolute;
     inset: 0;
@@ -80,6 +87,8 @@
 
 
 .about-full>header {
+    display: flex;
+    align-items: center;
     flex: 0 0 auto;
 }
 
@@ -146,6 +155,14 @@
     background-color: var(--color-accent);
 }
 
+.carousel-text{
+    height: 30%;
+}
+
+.carousel-text h2{
+    text-align: center;
+}
+
 
 .material-symbols.icon {
     height: 70%;
@@ -179,6 +196,11 @@
     justify-content: center;
     align-content: center;
     gap: var(--space-3);
+}
+
+.projects-wrapper {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
@@ -241,6 +263,11 @@
     background: #fff;
 }
 
+.partners-wrap {
+    flex: 0 0 auto;
+    margin-bottom: var(--space-4);
+}
+
 .partners-grid {
     flex: 1 1 auto;
     display: flex;
@@ -257,8 +284,13 @@
     gap: 8px;
 }
 
-.partner-info h2:hover{
-    color:var(--color-text-muted);
+.partner-info h2:hover {
+    color: var(--color-text-muted);
+}
+
+.partner-info img {
+    width: 100px;
+    height: 50px;
 }
 
 
@@ -269,6 +301,12 @@
     flex-direction: column;
     gap: var(--space-4);
     padding: var(--space-6);
+}
+
+.contact-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-full>div:first-child {
@@ -286,4 +324,20 @@
 
 .contact-full button {
     background-color: var(--color-text)
+}
+
+.contact-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto
+}
+
+.contact-form-info {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
 }

@@ -5,8 +5,8 @@
     <span>Proiecte</span>
   </a>
 
-  
-  <div class="page-title" style="flex-direction: column;">
+
+  <div class="page-title">
     <h1>{{project.name}}</h1>
     <h3>{{project.location}}</h3>
   </div>
@@ -14,11 +14,9 @@
 
 </section>
 
-<section>
-  <div style="width: 100%; height: 50vh;">
-    <img [src]="project.images" style="width: 100%; height: 100%; object-fit: cover;">
-  </div>
-</section>
+<div class="image-wrapper">
+  <img [src]="project.images">
+</div>
 
 <section class="section-pad">
   <h3>{{project.status}}</h3>
@@ -27,10 +25,10 @@
   </div>
   <div>
     @if(project.status == 'Încheiat'){
-      <span>Perioada: <b>{{project.start_date}} - {{project.end_date}}</b></span>
+    <span>Perioada: <b>{{project.start_date}} - {{project.end_date}}</b></span>
     }
     @else {
-      <span>Început la <b>{{project.start_date}}</b></span>
+    <span>Început la <b>{{project.start_date}}</b></span>
 
     }
   </div>

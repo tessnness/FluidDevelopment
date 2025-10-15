@@ -9,3 +9,11 @@
     height: auto;
     scroll-snap-align: none;
 }
+
+.footer-links {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    cursor: pointer;
+}

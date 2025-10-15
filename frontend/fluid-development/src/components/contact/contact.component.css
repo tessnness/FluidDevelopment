@@ -42,3 +42,8 @@ button {
         'GRAD' 0,
         'opsz' 48
 }
+
+.contact-form {
+    margin: var(--space-3);
+    flex: 1 1 clamp(250px, 30%, 300px);
+}
