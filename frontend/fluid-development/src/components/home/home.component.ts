@@ -21,6 +21,17 @@ export class HomeComponent implements OnInit {
     useGrouping: false,
   }
 
+  carouselItems = [
+    { icon: 'home', title: 'FONDAT ÎN', number: 2000, text: '' },
+    { icon: 'map', title: 'PREZENȚI ÎN', number: 9, text: 'ORAȘE' },
+    { icon: 'water_pump', title: 'PROIECTE ÎNCHEIATE', number: 70, text: '' },
+    { icon: 'engineering', title: 'PROIECTE ÎN DERULARE', number: 4, text: '' },
+    { icon: 'diversity_3', title: 'ECHIPĂ DE', number: 55, text: 'ANGAJAȚI' },
+    { icon: 'domain', title: 'SUPRAFAȚĂ LUCRATĂ', number: 120, text: 'MP' },
+  ];
+
+
+
   projectService = inject(ProjectsService)
   projects: any;
 
