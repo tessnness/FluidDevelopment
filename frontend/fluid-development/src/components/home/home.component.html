@@ -236,7 +236,7 @@
 
         <div style="margin: 10px 0;">
           <label>Mesaj</label><br>
-          <textarea style="height: 200px;"></textarea>
+          <textarea id="message" name="message" required minlength="1" maxlength="5000" [(ngModel)]="form.message" style="height: 200px;"></textarea>
         </div>
 
         <div style="margin:10px 0">
@@ -256,6 +256,8 @@
       </form>
 
     </div>
+
+
 
 
 
