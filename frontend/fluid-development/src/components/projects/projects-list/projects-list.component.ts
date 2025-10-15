@@ -17,7 +17,10 @@ export class ProjectsListComponent implements OnInit {
   route = inject(ActivatedRoute)
   router = inject(Router)
 
-  projects: any;
+  projects: any[] = [];
+  categories: string[] = [];
+  locations: string[] = [];
+
   searchString: string;
 
   public _selectedCategory: string | undefined;;
@@ -101,9 +104,13 @@ export class ProjectsListComponent implements OnInit {
   getAllProjects() {
     this.projectService.list(this.searchString, this.selectedCategory, this.selectedStatus, this.selectedLocation).subscribe(r => {
       this.projects = r;
+      this.categories = [...new Set(r.map(p => p.category).filter(Boolean))];
+      this.locations  = [...new Set(r.map(p => p.location).filter(Boolean))];
+
       console.log(r)
     })
   }
+
 
   searchNow() {
     let params = { search: this.searchString, pageNo: 1 };

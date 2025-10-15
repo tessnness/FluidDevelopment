@@ -31,11 +31,12 @@
       </select>
     </div>
 
+
     <div>
       <select [(ngModel)]="selectedCategory" class="form-control" name="selectedCategory">
         <option [ngValue]="undefined">Categorie</option>
-        @for(project of projects; track project.id){
-        <option [ngValue]="project.category">{{ project.category }}</option>
+        @for (c of categories; track c) {
+          <option [ngValue]="c">{{ c }}</option>
         }
       </select>
     </div>
@@ -43,8 +44,8 @@
     <div>
       <select [(ngModel)]="selectedLocation" class="form-control" name="selectedLocation">
         <option [ngValue]="undefined">Locatie</option>
-        @for(project of projects; track project.id){
-        <option [ngValue]="project.location">{{ project.location }}</option>
+        @for (l of locations; track l) {
+          <option [ngValue]="l">{{ l }}</option>
         }
       </select>
     </div>
