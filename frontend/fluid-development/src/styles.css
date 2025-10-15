@@ -61,6 +61,13 @@ body {
     margin-top: 0;
 }
 
+.page-title {
+    margin-top: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .hero-full {
     scroll-snap-align: none;
 }
