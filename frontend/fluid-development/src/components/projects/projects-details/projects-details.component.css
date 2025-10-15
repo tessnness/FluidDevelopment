@@ -6,14 +6,14 @@
 .box-header {
     color: #444;
     display: block;
-    padding: 10px;
+    padding: var(--space-3);
     position: relative;
 }
 
 .back-link {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: var(--space-3);
     text-decoration: none;
     color: var(--color-text);
 }

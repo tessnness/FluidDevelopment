@@ -110,5 +110,5 @@ body {
     padding: var(--space-6);
     background: var(--color-accent);
     color: var(--color-text);
-    border-radius: 4px 4px 0 0;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
 }

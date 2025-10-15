@@ -58,7 +58,7 @@
     }
 
     .section-pad {
-        padding: 20px;
+        padding: var(--space-6);
     }
 
     .section-tall-dark {

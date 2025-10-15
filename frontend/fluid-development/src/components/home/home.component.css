@@ -105,7 +105,7 @@
     overflow-x: auto;
     scrollbar-width: thin;
     scrollbar-color: var(--color-accent) var(--color-white);
-    gap: 10px;
+    gap: var(--space-3);
     margin-top: var(--space-4);
 }
 
@@ -155,11 +155,11 @@
     background-color: var(--color-accent);
 }
 
-.carousel-text{
+.carousel-text {
     height: 30%;
 }
 
-.carousel-text h2{
+.carousel-text h2 {
     text-align: center;
 }
 
@@ -208,7 +208,6 @@
     border-radius: var(--radius-md);
     position: relative;
     overflow: hidden;
-    margin: var(--space-3);
     box-shadow: var(--box-shadow-1);
     flex: 1 1 clamp(250px, 30%, 300px);
     height: clamp(250px, 30vw, 300px);
@@ -233,14 +232,23 @@
     object-fit: cover;
 }
 
+
 .project-home-details {
     position: absolute;
+    left: 0;
+    right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.9) 100%);
-    width: 100%;
-    text-align: end;
-    z-index: 1
+    padding: var(--space-3) var(--space-4);
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, .9) 100%);
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-1);
+    z-index: 1;
 }
+
 
 .project-home-title {
     font-size: var(--fs-h2);
@@ -281,7 +289,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: var(--space-2);
 }
 
 .partner-info h2:hover {
@@ -338,6 +346,6 @@
 
 .contact-form-info {
     display: flex;
-    gap: 10px;
-    margin: 10px 0;
+    gap: var(--space-3);
+    margin: var(--space-3) 0;
 }

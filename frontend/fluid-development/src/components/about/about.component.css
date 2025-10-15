@@ -1,8 +1,8 @@
 .info-wrapper {
     display: flex;
     align-items: center;
-    gap: 24px;
-    margin-block: 16px;
+    gap: var(--space-6);
+    margin-block: var(--space-4);
 }
 
 
@@ -70,7 +70,7 @@
 }
 
 .about-services-card {
-    margin: 20px;
+    margin: var(--space-4);
     display: flex;
     align-items: center;
     box-shadow: var(--box-shadow-1);

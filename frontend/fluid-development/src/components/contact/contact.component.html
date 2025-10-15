@@ -30,8 +30,8 @@
       <div>Iti stam la dispozitie si iti vom raspunde in cel mai scurt timp. Trimite-ne o solicitare, spune-ne daca ai
         nevoie de ajutor sau vrei sa faci o comanda.</div>
 
-      <form #f="ngForm" (ngSubmit)="submit()" style="margin-top: 20px;">
-        <div style="margin-top: 20px;">
+      <form #f="ngForm" (ngSubmit)="submit()" style="margin-top: 24px;">
+        <div style="margin-top: 24px;">
           <div>
             <label>Email</label>
             <br>
@@ -41,14 +41,14 @@
             <label>Nume</label><br>
             <input type="text" id="name" name="name" required minlength="4" maxlength="20" />
           </div>
-          <div style="margin: 10px 0;">
+          <div style="margin: 12px 0;">
             <label>Mesaj</label><br>
             <textarea id="message" name="message" required minlength="1" maxlength="5000" [(ngModel)]="form.message" style="height: 200px;"></textarea>
           </div>
         </div>
 
 
-        <div style="margin:10px 0">
+        <div style="margin: 12px 0">
           <button [disabled]="f.invalid || loading" style="font-weight:bold;">
             {{ loading ? 'Trimit...' : 'Trimite' }}
           </button>
