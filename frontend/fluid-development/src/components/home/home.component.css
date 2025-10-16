@@ -282,14 +282,14 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: clamp(16px, 3vw, 32px)
+    gap: clamp(32px, 3vw, 64px)
 }
 
 .partner-info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--space-4);
 }
 
 .partner-info h2:hover {
@@ -297,7 +297,7 @@
 }
 
 .partner-info img {
-    width: 100px;
+    width: 150px;
     height: 50px;
 }
 
