@@ -3,7 +3,17 @@
   <section class="section-pad hero-full">
     <div class="hero">
       <div class="hero-image-wrapper">
-        <img src="assets/img/fluid-development-desktop.png" alt="hero-image" class="hero-image">
+        <img src="assets/img/fluid-development-desktop.png" alt="hero-image-desktop" class="hero-image">
+        <!-- <img src="assets/img/fluid-development-phone.png" alt="hero-image-phone" class="hero-image-phone"> -->
+
+        <!-- .hero-image-desktop {
+      display: none;
+  }
+
+  .hero-image-phone {
+      object-fit: initial;
+
+  } -->
       </div>
     </div>
   </section>
@@ -21,16 +31,16 @@
 
     <main class="carousel-parent">
       @for (item of carouselItems; track $index) {
-        <div class="carousel-item">
-          <div class="material-symbols icon">{{ item.icon }}</div>
-          <div class="carousel-text">
-            <h2>{{ item.title }}</h2>
-            <h2>
-              <span [countUp]="item.number" [options]="countOpts">0</span>
-              @if (item.text) { {{ ' ' + item.text }} }
-            </h2>
-          </div>
+      <div class="carousel-item">
+        <div class="material-symbols icon">{{ item.icon }}</div>
+        <div class="carousel-text">
+          <h2>{{ item.title }}</h2>
+          <h2>
+            <span [countUp]="item.number" [options]="countOpts">0</span>
+            @if (item.text) { {{ ' ' + item.text }} }
+          </h2>
         </div>
+      </div>
       }
 
 
@@ -126,11 +136,11 @@
           <div>
             <label>Email</label>
             <br>
-            <input type="text" id="email" name="email" required minlength="4" />
+            <input type="email" id="email" name="email" required minlength="4" [(ngModel)]="form.email" />
           </div>
           <div>
             <label>Nume</label><br>
-            <input type="text" id="name" name="name" required minlength="4" maxlength="20" />
+            <input type="text" id="name" name="name" required minlength="4" maxlength="80" [(ngModel)]="form.name" />
           </div>
         </div>
 

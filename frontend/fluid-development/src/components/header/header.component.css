@@ -20,9 +20,14 @@
     align-items: center;
 }
 
+.header-image{
+    width: 75px;
+    height: 35px;
+}
+
 .header-wrapper img {
-    width: 100px;
-    height: 50px;
+    width: 100%;
+    height: 100%;
 }
 
 .nav-toggle {
