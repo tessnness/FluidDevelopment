@@ -2,20 +2,21 @@
 
   <section class="section-pad hero-full">
     <div class="hero">
-      <div class="hero-image-wrapper">
-        <img src="assets/img/fluid-development-desktop.png" alt="hero-image-desktop" class="hero-image">
-        <!-- <img src="assets/img/fluid-development-phone.png" alt="hero-image-phone" class="hero-image-phone"> -->
-
-        <!-- .hero-image-desktop {
-      display: none;
-  }
-
-  .hero-image-phone {
-      object-fit: initial;
-
-  } -->
-      </div>
+      <picture class="hero-picture">
+        <source media="(min-width: 992px)" srcset="assets/img/fluid-development-desktop.png">
+        <img src="assets/img/fluid-development-phone.png" alt="Hero">
+      </picture>
     </div>
+
+    <!-- <div class="hero">
+      
+      <div class="hero-image-wrapper">
+        <img src="assets/img/fluid-development-desktop.png" alt="hero-image-desktop" class="hero-image-desktop">
+        <img src="assets/img/fluid-development-phone.png" alt="hero-image-phone" class="hero-image-phone">
+
+
+      </div>
+    </div> -->
   </section>
 
   <section class="section-pad about-full">

@@ -72,9 +72,9 @@ body {
     scroll-snap-align: none;
 }
 
-.hero-image {
+/* .hero-image {
     z-index: 0 !important;
-}
+} */
 
 @media (prefers-reduced-motion: reduce) {
     html {

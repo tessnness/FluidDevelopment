@@ -35,11 +35,10 @@
           <div>
             <label>Email</label>
             <br>
-            <input type="text" id="email" name="email" required minlength="4" />
-          </div>
+            <input type="email" id="email" name="email" required minlength="4" [(ngModel)]="form.email" />          </div>
           <div>
             <label>Nume</label><br>
-            <input type="text" id="name" name="name" required minlength="4" maxlength="20" />
+            <input type="text" id="name" name="name" required minlength="4" maxlength="80" [(ngModel)]="form.name" />
           </div>
           <div style="margin: 12px 0;">
             <label>Mesaj</label><br>
