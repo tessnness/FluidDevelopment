@@ -28,3 +28,9 @@
     }
 
 }
+
+
+.text-links{
+    color: var(--color-text) !important;
+    text-decoration: none;
+}

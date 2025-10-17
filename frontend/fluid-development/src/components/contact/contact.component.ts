@@ -17,6 +17,7 @@ export class ContactComponent implements OnInit {
   loading = false;
   success = false;
   error = false;
+  email = 'office@fluiddevelopment.ro';
 
 
   constructor() { }
