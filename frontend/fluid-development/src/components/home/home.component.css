@@ -1,7 +1,7 @@
 .hero-full {
     --section-pad-block: 0px;
     padding: 0;
-    height: 100vh; 
+    height: 100vh;
 }
 
 .hero {
@@ -10,26 +10,20 @@
     width: 100%;
 }
 
-.hero-bg {
-    position: absolute; inset: 0;
-    background: center / cover no-repeat url("assets/img/fluid-development-phone.png");
-  }
-
-  .hero { position: relative; height: 100vh; }
-
-  .hero-picture {
+.hero-picture {
     position: absolute;
     inset: 0;
     display: block;
-  }
-  
-  .hero-picture > img {
+}
+
+.hero-picture>img {
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover;   /* phone + desktop both fill */
-  }
-  
+    object-fit: cover;
+    object-position: center; 
+}
+
 
 .about-full,
 .projects-full,
@@ -47,14 +41,6 @@
 
 
 @media (max-width: 991px) {
-    .hero {
-        height: 70dvh;
-    }
-
-    .hero-full .hero {
-        height: 100dvh;
-    }
-
     .contact-full input[type="text"] {
         width: 160px
     }
@@ -63,24 +49,9 @@
     .contact-full button {
         width: 330px
     }
-
-    .hero-image-desktop {
-        display: none;
-    }
-  
-    .hero-image-phone {
-        object-fit: initial;
-  
-    }
-
 }
 
 @media (min-width: 992px) {
-
-    .hero-bg {
-        background-image: url("assets/img/fluid-development-desktop.png");
-      }
-
     .contact-full input[type="text"] {
         width: 250px
     }
@@ -91,14 +62,29 @@
     }
 }
 
+@media (max-wdth: 549px) {
+    .hero {
+        height: 70dvh;
+    }
+
+    .hero-picture > img {
+        object-position: 50% 20%;   
+      }
+
+}
+
+@media (min-width: 549px) and (max-width: 991px){
+    .hero-picture > img {
+        object-fit: initial !important;   
+      }
+
+}
+
+
 .hero-image-wrapper {
     position: absolute;
     inset: 0;
 }
-
-
-
-
 
 .about-full>header {
     display: flex;
