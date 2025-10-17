@@ -81,6 +81,7 @@ html { overflow-anchor: none; }
     flex: 1 0 auto;
     min-height: 0;
     overflow: visible;
+    padding-top: var(--nav-h);
 }
 
 .box {
