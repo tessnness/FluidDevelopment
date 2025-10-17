@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBase: 'https://fluid-development.vercel.app'
+  apiBase: 'https://api.fluiddevelopment.ro'
 };

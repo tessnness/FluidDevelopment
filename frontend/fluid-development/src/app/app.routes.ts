@@ -21,7 +21,7 @@ export const routes: Routes = [
                         { property: 'og:title', content: 'Fluid Development' },
                         { property: 'og:type', content: 'website' }
                     ],
-                    canonical: 'https://fluid-development.vercel.app/'
+                    canonical: 'https://www.fluiddevelopment.ro/'
                 }
             },
             {
@@ -31,7 +31,7 @@ export const routes: Routes = [
                         { name: 'description', content: 'Experiență în proiectare și execuție de construcții.' },
                         { property: 'og:title', content: 'Despre Fluid Development' }
                     ],
-                    canonical: 'https://fluid-development.vercel.app/about'
+                    canonical: 'https://www.fluiddevelopment.ro/about'
                 }
             },
             {
@@ -40,7 +40,7 @@ export const routes: Routes = [
                     meta: [
                         { name: 'description', content: 'Contactează echipa Fluid Development.' }
                     ],
-                    canonical: 'https://fluid-development.vercel.app/contact'
+                    canonical: 'https://www.fluiddevelopment.ro/contact'
                 }
             },
             {
@@ -50,21 +50,21 @@ export const routes: Routes = [
                         { name: 'description', content: 'Portofoliu de proiecte și lucrări în desfășurare.' },
                         { property: 'og:title', content: 'Proiecte Fluid Development' }
                     ],
-                    canonical: 'https://fluid-development.vercel.app/projects'
+                    canonical: 'https://www.fluiddevelopment.ro/projects'
                 }
             },
             { path: 'projects/:slug', component: ProjectsDetailsComponent },
             {
                 path: 'gdpr', component: GdprPageComponent, title: 'GDPR | Fluid Development',
-                data: { canonical: 'https://fluid-development.vercel.app/gdpr' }
+                data: { canonical: 'https://www.fluiddevelopment.ro/gdpr' }
             },
             {
                 path: 'terms', component: TermsPageComponent, title: 'Termeni și Condiții | Fluid Development',
-                data: { canonical: 'https://fluid-development.vercel.app/terms' }
+                data: { canonical: 'https://www.fluiddevelopment.ro/terms' }
             },
             {
                 path: 'cookies', component: CookiePolicyComponent, title: 'Politică Cookies | Fluid Development',
-                data: { canonical: 'https://fluid-development.vercel.app/cookies' }
+                data: { canonical: 'https://www.fluiddevelopment.ro/cookies' }
             }
         ]
     }

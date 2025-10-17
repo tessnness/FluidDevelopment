@@ -22,7 +22,7 @@ _cache = { "ts": 0, "items": []}
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://fluid-development-frontend.vercel.app",  
+        "https://www.fluiddevelopment.ro/",  
         "http://localhost:4200",                          
         "http://127.0.0.1:4200",
     ],

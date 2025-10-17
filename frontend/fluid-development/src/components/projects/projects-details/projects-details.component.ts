@@ -46,7 +46,7 @@ export class ProjectsDetailsComponent implements OnInit {
       this.meta.updateTag({ property: 'og:description', content: desc }, "property='og:description'");
       // this.meta.updateTag({ property: 'og:type', content: 'article' }, "property='og:type'");
 
-      const url = `https://fluid-development.vercel.app/projects/${this.slug}`;
+      const url = `https://www.fluiddevelopment.ro/projects/${this.slug}`;
       this.setCanonical(url);
 
     })
