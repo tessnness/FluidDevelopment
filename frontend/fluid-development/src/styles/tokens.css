@@ -61,11 +61,6 @@
         padding: var(--space-6);
     }
 
-    .section-tall-dark {
-        height: 500px;
-        background: #000;
-    }
-
     .mt-2 {
         margin-top: 16px;
     }

@@ -1,11 +1,11 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, NgZone, OnInit } from '@angular/core';
 import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from '../footer/footer.component';
 import { RouterModule } from '@angular/router';
 
 
-import {Router, NavigationEnd} from '@angular/router';
-import {filter, map, startWith} from 'rxjs/operators';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter, map, startWith } from 'rxjs/operators';
 import { AsyncPipe } from '@angular/common';
 
 
@@ -17,7 +17,8 @@ import { AsyncPipe } from '@angular/common';
 })
 export class MasterPageComponent implements OnInit {
 
-  private router = inject(Router); 
+  private router = inject(Router);
+
 
   isHome$ = this.router.events.pipe(
     filter((e): e is NavigationEnd => e instanceof NavigationEnd),
@@ -26,13 +27,16 @@ export class MasterPageComponent implements OnInit {
   );
 
 
-  constructor() { }
+  constructor() { 
+  }
 
-  
+
 
   ngOnInit() {
 
-    
   }
 
+
 }
+
+

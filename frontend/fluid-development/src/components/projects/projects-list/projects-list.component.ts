@@ -80,10 +80,6 @@ export class ProjectsListComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(res => {
-      // if (res['pageNo']) {
-      //   this.sortingPagingCriteria.pageNumber = res["pageNo"] ? parseInt(res["pageNo"]) : 1;
-      // }
-
       if (res["search"]) {
         this.searchString = res['search'];
 

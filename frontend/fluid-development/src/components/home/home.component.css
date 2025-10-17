@@ -1,11 +1,11 @@
 .hero-full {
     --section-pad-block: 0px;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
     width: 100%;
 }
@@ -64,7 +64,7 @@
 
 @media (max-wdth: 549px) {
     .hero {
-        height: 70dvh;
+        min-height: 70vh;
     }
 
     .hero-picture > img {

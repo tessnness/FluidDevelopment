@@ -5,6 +5,7 @@
     display: block;
     background: #fff;
 }
+:host { outline: 2px solid hotpink; }
 
 .box {
     height: var(--nav-h);
@@ -20,7 +21,7 @@
     align-items: center;
 }
 
-.header-image{
+.header-image {
     width: 75px;
     height: 35px;
 }

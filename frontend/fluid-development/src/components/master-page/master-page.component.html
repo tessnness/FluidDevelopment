@@ -1,15 +1,9 @@
-<!-- <cookie-bar></cookie-bar> -->
-
-
-
 <div class="app-shell" [class.is-home]="(isHome$ | async) ?? false">
   <app-header></app-header>
-
   <main class="app-main">
     <div class="route-host">
       <router-outlet></router-outlet>
     </div>
   </main>
-
   <app-footer></app-footer>
 </div>
