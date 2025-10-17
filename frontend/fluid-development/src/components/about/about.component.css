@@ -45,7 +45,7 @@
     }
 
     .about-services-card {
-        width: 40%;
+        width: 45%;
     }
 }
 
@@ -78,13 +78,13 @@
 }
 
 .about-services-card h3 {
-    width: 70%;
+    width: 80%;
     text-align: center;
 }
 
 
 .about-services-image {
-    width: 30%;
+    width: 20%;
     height: 100%;
 }
 
