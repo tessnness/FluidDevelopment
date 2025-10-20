@@ -1,11 +1,4 @@
 {
-  "functions": {
-    "api/**/*.py": {
-      "runtime": "python3.12",
-      "maxDuration": 10,
-      "memory": 512
-    }
-  },
   "routes": [
     { "src": "^/$",                    "dest": "/api/index.py" },
     { "src": "^/projects(?:/.*)?$",    "dest": "/api/index.py" },
