@@ -31,24 +31,15 @@ app.add_middleware(
     allow_headers=["*"],  
 )
 
-DATE_FORMATS = (
-    "%Y-%m-%d",
-    "%d/%m/%Y", "%m/%d/%Y",
-    "%d.%m.%Y", "%Y.%m.%d",
-    "%d-%m-%Y", "%m-%d-%Y",
-    "%d/%m/%y", "%m/%d/%y", 
-    "%d.%m.%y", "%d-%m-%y",
-)
 
 
-# ID	Name	Description	Location	Start Date	End Date	Category	Status	Featured	Images	Slug
+# ID	Name	Description	Location	End Date	Category	Status	Featured	Images	Slug
 
 class Project(BaseModel):
     id: str
     name: str
     description: Optional[str] = ""
-    location: Optional[str] = ""
-    start_date: Optional[str] = None     
+    location: Optional[str] = ""    
     end_date: Optional[str] = None        
     category: Optional[str] = ""
     status: Optional[str] = "Încheiat"
@@ -57,24 +48,13 @@ class Project(BaseModel):
     slug: str
 
 
-def _parse_date(s: Optional[str]) -> Optional[str]:
-    s = (s or "").strip()
-    if not s:
-        return None
-    for fmt in DATE_FORMATS:
-        try:
-            return datetime.strptime(s, fmt).date().isoformat() 
-        except ValueError:
-            pass
-    return None
-
 def _date_key(s: Optional[str]) -> int:
     """Return YYYYMMDD as int for sorting (0 if missing/unknown)."""
     if not s:
         return 0
     try:
-        dt = datetime.fromisoformat(s)  # works because _parse_date returns ISO
-        return int(dt.strftime("%Y%m%d"))
+        dt = datetime.fromisoformat(s)
+        return int(dt.strftime("%Y"))
     except Exception:
         return 0
 
@@ -117,8 +97,7 @@ def _fetch_projects() -> List[Project]:
             name=(row.get("Name") or "").strip(),
             description=(row.get("Description") or "").strip(),
             location=(row.get("Location") or "").strip(),
-            start_date=_parse_date(row.get("Start Date")),
-            end_date=_parse_date(row.get("End Date")),
+            end_date=row.get("End Date"),
             category=(row.get("Category") or "").strip(),
             status=(row.get("Status") or "Încheiat").strip() or "Încheiat",
             featured=_to_bool(row.get("Featured")),
@@ -129,7 +108,7 @@ def _fetch_projects() -> List[Project]:
         items.append(p)
     
     def sort_key(p: Project):
-        ts = _date_key(p.start_date)
+        ts = _date_key(p.end_date)
         return (not p.featured, ts == 0, -ts, p.name.lower())
     
     items.sort(key=sort_key)
