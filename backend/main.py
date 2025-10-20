@@ -13,23 +13,29 @@ import re
 
 # export PROJECTS_CSV_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vTZubpKdMoNablHbU6Q2WpuOVvUIGLnVt1_Q3douVFGUQsU88H3T2bTw4gornJXN3ap7wb9q3t4DBvC/pub?gid=0&single=true&output=csv"
 
+
 csv_url = os.getenv("PROJECTS_CSV_URL")
 cache_ttl = int(os.getenv("CACHE_TTL", "600"))
 
 app = FastAPI(title="Projects via Google Sheets (CSV)")
 _cache = { "ts": 0, "items": []}
 
+from fastapi.middleware.cors import CORSMiddleware
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://www.fluiddevelopment.ro/",  
-        "http://localhost:4200",                          
+        "https://www.fluiddevelopment.ro",
+        "https://fluiddevelopment.ro",
+        "http://localhost:4200",
         "http://127.0.0.1:4200",
     ],
     allow_credentials=False,
-    allow_methods=["*"],  
-    allow_headers=["*"],  
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
+
+
 
 
 
@@ -49,7 +55,6 @@ class Project(BaseModel):
 
 
 def _date_key(s: Optional[str]) -> int:
-    """Return YYYYMMDD as int for sorting (0 if missing/unknown)."""
     if not s:
         return 0
     try:
@@ -81,7 +86,6 @@ def _fetch_projects() -> List[Project]:
     if r.status_code != 200:
         raise HTTPException(502, "Failed to fetch Google Sheets CSV")
     
-    # reader = csv.DictReader(io.StringIO(r.text))
     text = r.content.decode("utf-8-sig", errors="replace")
     reader = csv.DictReader(io.StringIO(text))
 
@@ -152,18 +156,17 @@ def get_project(slug: str):
     raise HTTPException(404, "Project not found")
 
 
-SMTP_HOST = os.getenv("SMTP_HOST")         # e.g. "smtp.office365.com"
+SMTP_HOST = os.getenv("SMTP_HOST")        
 SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
-SMTP_USER = os.getenv("SMTP_USER")         # e.g. "office@fluiddevelopment.ro"
+SMTP_USER = os.getenv("SMTP_USER")       
 SMTP_PASS = os.getenv("SMTP_PASS")
-CONTACT_TO = os.getenv("CONTACT_TO", SMTP_USER)   # where to deliver (office inbox)
-CONTACT_FROM = os.getenv("CONTACT_FROM", SMTP_USER)  # the authenticated sender
+CONTACT_TO = os.getenv("CONTACT_TO", SMTP_USER)   
+CONTACT_FROM = os.getenv("CONTACT_FROM", SMTP_USER)
 
 EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 
 @app.post("/contact")
 def contact(name: str = Form(...), email: str = Form(...), message: str = Form(...)):
-    # Basic guards
     name = (name or "").strip()
     email = (email or "").strip()
     message = (message or "").strip()
@@ -175,15 +178,13 @@ def contact(name: str = Form(...), email: str = Form(...), message: str = Form(.
     if not (1 <= len(message) <= 5000):
         raise HTTPException(400, "Mesaj prea scurt/lung")
 
-    # Build message
     msg = EmailMessage()
     msg["Subject"] = f"[Contact] {name}"
-    msg["From"] = CONTACT_FROM         # must match authenticated mailbox for most SMTP providers
+    msg["From"] = CONTACT_FROM         
     msg["To"] = CONTACT_TO
-    msg["Reply-To"] = email            # replies go to the sender
+    msg["Reply-To"] = email           
     msg.set_content(f"Nume: {name}\nEmail: {email}\n\n{message}")
 
-    # Send
     context = ssl.create_default_context()
     with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=15) as s:
         s.starttls(context=context)
