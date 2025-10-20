@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, inject, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter } from 'rxjs';
 
@@ -13,7 +13,10 @@ export class HeaderComponent implements OnInit {
 
   router = inject(Router)
 
-  @ViewChild('navToggle') navToggle!: ElementRef<HTMLInputElement>;
+  @ViewChild('menuParent', { static: true }) menuParent!: ElementRef<HTMLElement>;
+  @ViewChild('navToggle', { static: true }) navToggle!: ElementRef<HTMLInputElement>;
+  @ViewChild('hamburgerLabel', { static: true }) hamburgerLabel!: ElementRef<HTMLElement>;
+
 
   ngAfterViewInit() {
     this.router.events
@@ -25,9 +28,31 @@ export class HeaderComponent implements OnInit {
       });
   }
 
+  @HostListener('document:click', ['$event'])
+  @HostListener('document:touchstart', ['$event'])
+  handleDocClick(e: Event) {
+    const target = e.target as Node;
+    const menu = this.menuParent.nativeElement;
+    const toggle = this.navToggle.nativeElement;
+    const label = this.hamburgerLabel.nativeElement;
+
+    const clickedInsideMenu = menu.contains(target);
+    const clickedToggleOrLabel = toggle.contains(target) || label.contains(target);
+
+    if (!clickedInsideMenu && !clickedToggleOrLabel) {
+      toggle.checked = false;
+    }
+  }
+
+  // Optional: close on Esc
+  @HostListener('document:keydown.escape')
+  closeOnEsc() { this.navToggle.nativeElement.checked = false; }
+
   constructor() { }
 
   ngOnInit() {
   }
+
+
 
 }

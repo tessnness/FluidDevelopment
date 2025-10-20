@@ -4,12 +4,12 @@
   </div>
 
   <input id="nav-toggle" type="checkbox" class="nav-toggle" #navToggle>
-  <label for="nav-toggle" class="hamburger" aria-label="Menu">
+  <label for="nav-toggle" class="hamburger" aria-label="Menu" #hamburgerLabel>
     <span></span><span></span><span></span>
   </label>
 
 
-  <div class="menu-parent">
+  <div class="menu-parent" #menuParent>
     <a routerLink="/" class="menu-item" (click)="navToggle.checked=false">ACASǍ
     </a>
     <a routerLink="/about" class="menu-item" (click)="navToggle.checked=false">DESPRE
