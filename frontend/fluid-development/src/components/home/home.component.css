@@ -21,11 +21,10 @@
     height: 100%;
     display: block;
     object-fit: cover;
-    object-position: center; 
+    object-position: center;
 }
 
 
-.about-full,
 .projects-full,
 .contact-full {
     --section-pad-block: var(--space-6, 24px);
@@ -37,10 +36,27 @@
 .about-full {
     background: #fff;
     position: relative;
+    min-height: 100vh;
 }
 
 
 @media (max-width: 991px) {
+
+    .carousel-item {
+        width: 200px !important;
+        height: 200px !important;
+    }
+
+    .material-symbols.icon {
+        height: 60% !important;
+        font-size: 100px !important;
+        font-variation-settings:
+            'FILL' 1,
+            'wght' 200,
+            'GRAD' 0,
+            'opsz' 48
+    }
+
     .contact-full input[type="text"] {
         width: 160px
     }
@@ -67,16 +83,16 @@
         min-height: 70vh;
     }
 
-    .hero-picture > img {
-        object-position: 50% 20%;   
-      }
+    .hero-picture>img {
+        object-position: 50% 20%;
+    }
 
 }
 
-@media (min-width: 549px) and (max-width: 991px){
-    .hero-picture > img {
-        object-fit: initial !important;   
-      }
+@media (min-width: 549px) and (max-width: 991px) {
+    .hero-picture>img {
+        object-fit: initial !important;
+    }
 
 }
 
@@ -106,7 +122,7 @@
     scrollbar-width: thin;
     scrollbar-color: var(--color-accent) var(--color-white);
     gap: var(--space-3);
-    margin-top: var(--space-4);
+    margin: var(--space-4) 0;
 }
 
 .carousel-parent::-webkit-scrollbar {
@@ -144,6 +160,10 @@
     background-color: var(--color-white);
 
 }
+
+/* .carousel-item:first-child {
+    margin-left: 0;
+} */
 
 .carousel-item h2 {
     pointer-events: auto;

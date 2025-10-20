@@ -24,12 +24,9 @@
     {{project.description}}
   </div>
   <div>
-    @if(project.status == 'Încheiat'){
-    <span>Perioada: <b>{{project.start_date}} - {{project.end_date}}</b></span>
+    @if(project.status == 'Încheiat' || project.end_date){
+    <span>An recepție: <b>{{project.end_date}}</b></span>
     }
-    @else {
-    <span>Început la <b>{{project.start_date}}</b></span>
 
-    }
   </div>
 </section>
