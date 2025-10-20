@@ -20,7 +20,8 @@
 
 
 
-    <main class="carousel-parent">
+    <main class="carousel-parent" #carousel (mouseenter)="pauseAutoAdvance()" (mouseleave)="resumeAutoAdvance()"
+      (touchstart)="pauseAutoAdvance()" (touchend)="resumeAutoAdvance()">
       @for (item of carouselItems; track $index) {
       <div class="carousel-item">
         <div class="material-symbols icon">{{ item.icon }}</div>

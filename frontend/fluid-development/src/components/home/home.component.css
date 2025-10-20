@@ -119,15 +119,24 @@
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    scrollbar-width: thin;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     scrollbar-color: var(--color-accent) var(--color-white);
     gap: var(--space-3);
-    margin: var(--space-4) 0;
 }
 
 .carousel-parent::-webkit-scrollbar {
+    height: 0;
+}
+
+.carousel-parent:hover {
+    scrollbar-width: thin;
+}
+
+.carousel-parent:hover::-webkit-scrollbar {
     height: 8px;
 }
+
 
 .carousel-parent::-webkit-scrollbar-track {
     background: var(--color-white);
@@ -155,15 +164,12 @@
     width: 350px;
     height: 350px;
     overflow: hidden;
-    margin: var(--space-3);
+    margin: var(--space-3) 0;
     box-shadow: var(--box-shadow-1);
     background-color: var(--color-white);
 
 }
 
-/* .carousel-item:first-child {
-    margin-left: 0;
-} */
 
 .carousel-item h2 {
     pointer-events: auto;
