@@ -75,13 +75,13 @@
     <div class="projects-wrapper">
       @for (project of projects; track project.id) {
       @if(project.featured){
-      <div class="project-home">
+      <a class="project-home" [routerLink]="'/projects/' + project.slug">
         <img [src]="project.images ? project.images : 'assets/projects/default-construction.jpg'">
         <div class="project-home-details">
           <div class="project-home-title">{{project.name}}</div>
           <div class="project-home-subtitle">{{project.location}}</div>
         </div>
-      </div>
+      </a>
       }
 
       }

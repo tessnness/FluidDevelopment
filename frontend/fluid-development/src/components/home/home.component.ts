@@ -1,5 +1,5 @@
 import { Component, ElementRef, inject, NgZone, OnInit, ViewChild } from '@angular/core';
-import { RouterModule } from "@angular/router";
+import { RouterLink, RouterModule } from "@angular/router";
 import { CountUpModule } from 'ngx-countup';
 import { ProjectsService } from '../../services/projects.service';
 import { CommonModule } from '@angular/common';
@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   standalone: true,
-  imports: [RouterModule, CountUpModule, CommonModule, FormsModule]
+  imports: [RouterModule, CountUpModule, CommonModule, FormsModule, RouterLink]
 })
 export class HomeComponent implements OnInit {
 
@@ -63,7 +63,6 @@ export class HomeComponent implements OnInit {
   getAllProjects() {
     this.projectService.list(undefined, undefined, undefined, undefined, true).subscribe(r => {
       this.projects = r;
-      console.log(r)
     })
   }
 

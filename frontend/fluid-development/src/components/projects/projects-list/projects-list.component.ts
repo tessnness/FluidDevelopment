@@ -18,6 +18,7 @@ export class ProjectsListComponent implements OnInit {
   router = inject(Router)
 
   projects: any[] = [];
+  allProjects: any[] = [];
   categories: string[] = [];
   locations: string[] = [];
 
@@ -32,7 +33,8 @@ export class ProjectsListComponent implements OnInit {
   public set selectedCategory(value) {
     this._selectedCategory = value;
 
-    let params = { category: value };
+    console.log(value)
+    let params = { category: value ?? null };
     this.router.navigate([], {
       relativeTo: this.route,
       queryParams: params,
@@ -49,7 +51,7 @@ export class ProjectsListComponent implements OnInit {
   public set selectedStatus(value) {
     this._selectedStatus = value;
 
-    let params = { status: value };
+    let params = { status: value ?? null };
     this.router.navigate([], {
       relativeTo: this.route,
       queryParams: params,
@@ -66,7 +68,7 @@ export class ProjectsListComponent implements OnInit {
   public set selectedLocation(value) {
     this._selectedLocation = value;
 
-    let params = { location: value };
+    let params = { location: value ?? null };
     this.router.navigate([], {
       relativeTo: this.route,
       queryParams: params,
@@ -79,17 +81,28 @@ export class ProjectsListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.projectService.list(undefined, undefined, undefined, undefined).subscribe(all => {
+      this.allProjects = all;
+      this.categories = [...new Set(all.map(p => p.category).filter(Boolean))].sort();
+      this.locations = [...new Set(all.map(p => p.location).filter(Boolean))].sort();
+
+      this.getAllProjects();
+    });
+
     this.route.queryParams.subscribe(res => {
-      if (res["search"]) {
-        this.searchString = res['search'];
+      this.searchString = res['search'] ?? undefined
+      this._selectedCategory = res['category'] ?? undefined;
+      this._selectedStatus = res['status'] ?? undefined;
+      this._selectedLocation = res['location'] ?? undefined;
 
+      console.log(this._selectedCategory)
+
+      console.log(this.selectedCategory)
+      console.log(this._selectedCategory)
+
+      if (this.allProjects.length) {
+        this.getAllProjects();
       }
-      this._selectedCategory = res['category'];
-      this._selectedStatus = res['status'];
-      this._selectedLocation = res['location'];
-
-
-      this.getAllProjects()
 
 
     })
@@ -100,9 +113,6 @@ export class ProjectsListComponent implements OnInit {
   getAllProjects() {
     this.projectService.list(this.searchString, this.selectedCategory, this.selectedStatus, this.selectedLocation).subscribe(r => {
       this.projects = r;
-      this.categories = [...new Set(r.map(p => p.category).filter(Boolean))];
-      this.locations  = [...new Set(r.map(p => p.location).filter(Boolean))];
-
       console.log(r)
     })
   }

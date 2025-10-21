@@ -26,8 +26,6 @@ export class ProjectsDetailsComponent implements OnInit {
 
     this.route.paramMap.subscribe(p => {
       this.slug = p.get('slug')
-      console.log(p)
-      console.log(this.slug)
       this.getDetails();
     });
   }
@@ -35,7 +33,6 @@ export class ProjectsDetailsComponent implements OnInit {
   getDetails() {
     this.projectService.getDetails(this.slug).subscribe(r => {
       this.project = r;
-      console.log(r)
 
       const pageTitle = `${this.project.name} | Proiect | Fluid Development`;
       const desc = (this.project.description || '').slice(0, 155);

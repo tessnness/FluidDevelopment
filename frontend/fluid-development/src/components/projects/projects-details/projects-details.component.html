@@ -7,24 +7,24 @@
 
 
   <div class="page-title">
-    <h1>{{project.name}}</h1>
-    <h3>{{project.location}}</h3>
+    <h1>{{project?.name}}</h1>
+    <h3>{{project?.location}}</h3>
   </div>
 
 
 </section>
 
 <div class="image-wrapper">
-  <img [src]="project.images">
+  <img [src]="project?.images">
 </div>
 
 <section class="section-pad">
-  <h3>{{project.status}}</h3>
+  <h3>{{project?.status}}</h3>
   <div>
-    {{project.description}}
+    {{project?.description}}
   </div>
   <div>
-    @if(project.status == 'Încheiat' || project.end_date){
+    @if(project?.status == 'Încheiat' || project?.end_date){
     <span>An recepție: <b>{{project.end_date}}</b></span>
     }
 

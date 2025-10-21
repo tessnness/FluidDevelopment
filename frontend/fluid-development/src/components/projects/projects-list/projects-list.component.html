@@ -6,16 +6,15 @@
   </div>
 
   <div class="mt-2 text-muted">
-    Aici puteti descoperi proiectele incheiate si in desfasurare la care lucram.
+    Aici puteți descoperi proiectele încheiate și în desfășurare la care lucrăm.
   </div>
 
   <div class="mt-2 project-filters">
     <div style="flex-grow: 1;">
       <form (submit)="searchNow()">
-        <div>
+        <div class="project-filters-search">
           <input type="text" name="searchString" [(ngModel)]="searchString" class="form-control" style="width: 100%;">
-          <span (click)="searchNow()" style="margin-left: -30px; color: black; cursor: pointer;"
-            class="material-symbols">search</span>
+          <span (click)="searchNow()" class="material-symbols">search</span>
         </div>
       </form>
     </div>
