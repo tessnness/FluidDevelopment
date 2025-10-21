@@ -44,11 +44,6 @@ body {
 
 html { overflow-anchor: none; }
 
-/* html {
-    scroll-behavior: smooth;
-} */
-
-
 
 .section-pad {
     scroll-margin-top: var(--nav-h);
@@ -65,11 +60,6 @@ html { overflow-anchor: none; }
     justify-content: center;
 }
 
-
-
-/* .hero-image {
-    z-index: 0 !important;
-} */
 
 .app-shell {
     min-height: 100vh;

@@ -258,7 +258,6 @@
   }
 }
 
-/* >=992px: 3 per row */
 @media (min-width: 992px) {
   .project-home {
     flex-basis: calc((100% - 2 * var(--gap)) / 3);
@@ -376,7 +375,7 @@
 }
 
 .contact-full button {
-    background-color: var(--color-text)
+    background-color: var(--color-text-muted)
 }
 
 .contact-form {

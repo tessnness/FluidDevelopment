@@ -44,7 +44,6 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  // Optional: close on Esc
   @HostListener('document:keydown.escape')
   closeOnEsc() { this.navToggle.nativeElement.checked = false; }
 

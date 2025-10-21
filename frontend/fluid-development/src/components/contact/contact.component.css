@@ -9,7 +9,7 @@ button:hover {
 }
 
 button {
-    background-color: var(--color-text)
+    background-color: var(--color-text-muted)
 }
 
 .contact-form-parent {
