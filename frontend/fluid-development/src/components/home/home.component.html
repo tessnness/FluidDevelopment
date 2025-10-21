@@ -76,7 +76,7 @@
       @for (project of projects; track project.id) {
       @if(project.featured){
       <a class="project-home" [routerLink]="'/projects/' + project.slug">
-        <img [src]="project.images ? project.images : 'assets/projects/default-construction.jpg'">
+        <img [src]="project.images ? project.images : 'assets/projects/default-construction.jpg'" alt="{{project.name}}">
         <div class="project-home-details">
           <div class="project-home-title">{{project.name}}</div>
           <div class="project-home-subtitle">{{project.location}}</div>
@@ -95,15 +95,15 @@
     </div>
     <div class="partners-grid">
       <div class="partner-info">
-        <img src="assets/img-optimized/fluid-serv.webp">
+        <img src="assets/img-optimized/fluid-serv.webp" alt="Fluid Serv">
       </div>
 
       <div class="partner-info">
-        <img src="assets/img-optimized/general-hidroedil.webp">
+        <img src="assets/img-optimized/general-hidroedil.webp" alt="General Hidroedil">
       </div>
 
       <div class="partner-info">
-        <img src="assets/img-optimized/strolz-drilling.webp">
+        <img src="assets/img-optimized/strolz-drilling.webp" alt="Strolz Drilling">
       </div>
     </div>
   </section>
