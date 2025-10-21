@@ -33,7 +33,6 @@ export class ProjectsListComponent implements OnInit {
   public set selectedCategory(value) {
     this._selectedCategory = value;
 
-    console.log(value)
     let params = { category: value ?? null };
     this.router.navigate([], {
       relativeTo: this.route,
@@ -95,11 +94,6 @@ export class ProjectsListComponent implements OnInit {
       this._selectedStatus = res['status'] ?? undefined;
       this._selectedLocation = res['location'] ?? undefined;
 
-      console.log(this._selectedCategory)
-
-      console.log(this.selectedCategory)
-      console.log(this._selectedCategory)
-
       if (this.allProjects.length) {
         this.getAllProjects();
       }
@@ -113,7 +107,6 @@ export class ProjectsListComponent implements OnInit {
   getAllProjects() {
     this.projectService.list(this.searchString, this.selectedCategory, this.selectedStatus, this.selectedLocation).subscribe(r => {
       this.projects = r;
-      console.log(r)
     })
   }
 
