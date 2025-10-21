@@ -125,21 +125,21 @@
           <div>
             <label>Email</label>
             <br>
-            <input type="email" id="email" name="email" required minlength="4" [(ngModel)]="form.email" />
+            <input type="email" id="email" name="email" required minlength="4" [(ngModel)]="form.email" style="width: 100%;"/>
           </div>
           <div>
             <label>Nume</label><br>
-            <input type="text" id="name" name="name" required minlength="4" maxlength="80" [(ngModel)]="form.name" />
+            <input type="text" id="name" name="name" required minlength="4" maxlength="80" [(ngModel)]="form.name" style="width: 100%;"/>
           </div>
         </div>
 
-        <div style="margin: 12px 0;">
+        <div class="contact-form-message">
           <label>Mesaj</label><br>
           <textarea id="message" name="message" required minlength="1" maxlength="5000" [(ngModel)]="form.message"
             style="height: 200px;"></textarea>
         </div>
 
-        <div style="margin: 12px 0">
+        <div class="contact-form-button">
           <button [disabled]="f.invalid || loading" style="font-weight:bold;">
             {{ loading ? 'Trimit...' : 'Trimite' }}
           </button>
