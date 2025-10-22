@@ -23,7 +23,7 @@
             "assets": [
               "src/favicon.ico",
               { "glob": "**/*", "input": "src/assets/img-optimized", "output": "assets/img-optimized" },
-              "src/assets/projects",
+              "src/assets",
               "src/sitemap.xml",
               "src/robots.txt",
               {
