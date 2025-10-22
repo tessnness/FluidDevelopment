@@ -24,6 +24,8 @@ export class ProjectsListComponent implements OnInit {
 
   searchString: string;
 
+  private el?: HTMLScriptElement;
+
   public _selectedCategory: string | undefined;;
 
   public get selectedCategory() {
@@ -80,6 +82,28 @@ export class ProjectsListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    if (typeof document === 'undefined') return;
+
+    const data = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://www.fluiddevelopment.ro/" },
+        { "@type": "ListItem", "position": 2, "name": "Proiecte", "item": "https://www.fluiddevelopment.ro/projects" }
+      ]
+    };
+
+    document.head.querySelectorAll('script[type="application/ld+json"][data-name="projects-breadcrumb"]')
+      .forEach(s => s.remove());
+
+    const s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.setAttribute('data-name', 'projects-breadcrumb');
+    s.text = JSON.stringify(data);
+    document.head.appendChild(s);
+    this.el = s;
+
     this.projectService.list(undefined, undefined, undefined, undefined).subscribe(all => {
       this.allProjects = all;
       this.categories = [...new Set(all.map(p => p.category).filter(Boolean))].sort();
@@ -103,6 +127,10 @@ export class ProjectsListComponent implements OnInit {
 
   }
 
+  ngOnDestroy() {
+    if (typeof document === 'undefined') return;
+    this.el?.remove();
+  }
 
   getAllProjects() {
     this.projectService.list(this.searchString, this.selectedCategory, this.selectedStatus, this.selectedLocation).subscribe(r => {
