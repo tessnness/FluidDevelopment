@@ -66,6 +66,14 @@
     .contact-full input[type="text"] {
         width: 250px
     }
+
+
+}
+
+@media (min-width: 768px) {
+    .partners-grid {
+        gap: 100px
+    }
 }
 
 @media (max-width: 576px) {
@@ -89,9 +97,9 @@
 
 }
 
-@media (min-width: 577px) {
+@media (min-width: 577px) and (max-width: 767px) {
     .partners-grid {
-        flex-direction: row;
+        gap: 48px;
     }
 
 }
@@ -236,13 +244,13 @@
 
 .project-home {
     flex: 0 0 100%;
-  max-width: 100%;
-  position: relative;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--box-shadow-1);
-  cursor: pointer;
-  aspect-ratio: 4 / 3;
+    max-width: 100%;
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--box-shadow-1);
+    cursor: pointer;
+    aspect-ratio: 4 / 3;
 
 }
 
@@ -252,17 +260,17 @@
 }
 
 @media (min-width: 576px) {
-  .project-home {
-    flex-basis: calc((100% - var(--gap)) / 2);
-    max-width:  calc((100% - var(--gap)) / 2);
-  }
+    .project-home {
+        flex-basis: calc((100% - var(--gap)) / 2);
+        max-width: calc((100% - var(--gap)) / 2);
+    }
 }
 
 @media (min-width: 992px) {
-  .project-home {
-    flex-basis: calc((100% - 2 * var(--gap)) / 3);
-    max-width:  calc((100% - 2 * var(--gap)) / 3);
-  }
+    .project-home {
+        flex-basis: calc((100% - 2 * var(--gap)) / 3);
+        max-width: calc((100% - 2 * var(--gap)) / 3);
+    }
 }
 
 .project-home:hover .project-home-details {
@@ -327,7 +335,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(32px, 3vw, 64px)
+    /* gap: clamp(100px, 3vw, 64px) */
 }
 
 
