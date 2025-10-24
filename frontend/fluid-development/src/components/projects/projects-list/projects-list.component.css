@@ -117,7 +117,7 @@
 
 .project-details h2,
 .project-details span {
-  color: #fff;
+  color: var(--color-white);
 }
 
 

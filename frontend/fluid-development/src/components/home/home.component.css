@@ -4,18 +4,67 @@
 
 .hero {
     min-height: 100vh;
-    position: relative;
 }
 
 .hero-picture {
     position: absolute;
     inset: 0;
+    pointer-events: none;
 }
 
 .hero-picture>img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: 50% 40%;
+    display: block;
 }
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: clamp(16px, 8vw, 100px);
+    /* right: clamp(16px, 12vw, 100px); */
+    bottom: clamp(120px, 24vh, 260px);
+}
+
+.stars-review {
+    display: flex;
+    gap: clamp(0, 6px);
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.stars-review .material-symbols {
+    font-size: clamp(18px, 3.5vw, 28px);
+    color: var(--color-text-muted);
+}
+
+.stars-review-text {
+    font-size: clamp(14px, 3.5vw, 18px);
+}
+
+
+.hero-overlay-text h1,
+.hero-overlay-text h2,
+.stars-review-text {
+    color: var(--color-white);
+    line-height: 1.5;
+
+}
+
+.hero-logo {
+    position: absolute;
+    right: clamp(12px, 4vw, 40px);
+    bottom: clamp(12px, 3vw, 24px);
+    width: 200px;
+    height: 30px;
+}
+
+
 
 .projects-full,
 .contact-full {
@@ -26,7 +75,7 @@
 
 
 .about-full {
-    background: #fff;
+    background: var(--color-white);
     position: relative;
     min-height: 100vh;
 }
@@ -42,11 +91,6 @@
     .material-symbols.icon {
         height: 60% !important;
         font-size: 100px !important;
-        font-variation-settings:
-            'FILL' 1,
-            'wght' 200,
-            'GRAD' 0,
-            'opsz' 48
     }
 
     .contact-full input[type="text"] {
@@ -193,6 +237,9 @@
     height: 70%;
     font-size: 200px;
     margin-top: -100px;
+}
+
+.material-symbols {
     font-variation-settings:
         'FILL' 1,
         'wght' 200,
@@ -306,7 +353,7 @@
     display: flex;
     flex-direction: column;
     padding: var(--section-pad-block);
-    background: #fff;
+    background: var(--color-white);
 }
 
 .partners-wrap {

@@ -3,11 +3,33 @@
   <section class="section-pad hero-full">
     <div class="hero">
       <picture class="hero-picture">
-        <source media="(max-width: 576px)" srcset="assets/img-optimized/fluid-development-hero-phone.webp">
-        <img src="assets/img-optimized/fluid-development-hero-desktop.webp" alt="Hero">
+        <img src="assets/img-optimized/waves-image.webp" alt="Hero Waves">
       </picture>
+
+      <div class="hero-overlay">
+        <div class="stars-review">
+          <span class="material-symbols">star</span>
+          <span class="material-symbols">star</span>
+          <span class="material-symbols">star</span>
+          <span class="material-symbols">star</span>
+          <span class="material-symbols">star</span>
+          <span class="stars-review-text">+20 ani de încredere și preformanță</span>
+        </div>
+
+        <div class="hero-overlay-text">
+          <h1>Proiectul tău in grija
+            noastră.</h1>
+          <h2 style="font-weight: 300;">
+            Proiectare și executie constructii hidroedilitare, civile și
+            instalatii. Retele de apã, canalizare și termoficare.</h2>
+        </div>
+      </div>
+
+      <img class="hero-logo" src="assets/img-optimized/fluid-development-title-logo.webp" alt="FD Title Logo">
+      
     </div>
   </section>
+
 
   <section class="about-full">
     <header class="section-pad ">
@@ -76,7 +98,8 @@
       @for (project of projects; track project.id) {
       @if(project.featured){
       <a class="project-home" [routerLink]="'/projects/' + project.slug">
-        <img [src]="project.images ? project.images : 'assets/projects/default-construction.jpg'" alt="{{project.name}}">
+        <img [src]="project.images ? project.images : 'assets/projects/default-construction.jpg'"
+          alt="{{project.name}}">
         <div class="project-home-details">
           <div class="project-home-title">{{project.name}}</div>
           <div class="project-home-subtitle">{{project.location}}</div>
@@ -125,11 +148,13 @@
           <div>
             <label>Email</label>
             <br>
-            <input type="email" id="email" name="email" required minlength="4" [(ngModel)]="form.email" style="width: 100%;"/>
+            <input type="email" id="email" name="email" required minlength="4" [(ngModel)]="form.email"
+              style="width: 100%;" />
           </div>
           <div>
             <label>Nume</label><br>
-            <input type="text" id="name" name="name" required minlength="4" maxlength="80" [(ngModel)]="form.name" style="width: 100%;"/>
+            <input type="text" id="name" name="name" required minlength="4" maxlength="80" [(ngModel)]="form.name"
+              style="width: 100%;" />
           </div>
         </div>
 

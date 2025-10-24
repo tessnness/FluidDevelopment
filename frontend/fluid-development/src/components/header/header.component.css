@@ -17,7 +17,7 @@
     right: 0;
     width: 100%;
     z-index: 3000;
-    background: #fff;
+    background: var(--color-white);
 }
 
 
@@ -94,7 +94,7 @@
     padding: var(--space-2);
     margin-top: var(--space-1);
     list-style: none;
-    background: #fff;
+    background: var(--color-white);
     border-radius: var(--radius-sm);
     line-height: 1.75;
     font-weight: 700;
@@ -151,7 +151,7 @@
         position: absolute;
         top: 100%;
         right: 0;
-        background: #fff;
+        background: var(--color-white);
         border-radius: 0 0 var(--radius-sm) var(--radius-sm);
         padding: var(--space-2);
         box-shadow: var(--box-shadow-2);
