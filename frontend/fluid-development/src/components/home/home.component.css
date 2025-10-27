@@ -27,7 +27,7 @@
     flex-direction: column;
     justify-content: center;
     left: clamp(16px, 8vw, 100px);
-    /* right: clamp(16px, 12vw, 100px); */
+    right: clamp(16px, 16vw, 200px);
     bottom: clamp(120px, 24vh, 260px);
 }
 
@@ -104,7 +104,12 @@
         width: 250px
     }
 
+}
 
+@media (min-width: 1200px) {
+    .hero-overlay {
+        right: 450px !important;
+    }
 }
 
 @media (min-width: 768px) {

@@ -14,8 +14,9 @@
 
 </section>
 
-<div class="image-wrapper">
-  <img [src]="project?.images" alt="{{project?.name}}">
+
+<div class="image-wrapper" [style.--img-url]="'url(' + project?.images + ')'">
+  <img [src]="project?.images" alt="{{ project?.name }}" class="image-foreground">
 </div>
 
 <section class="section-pad">
