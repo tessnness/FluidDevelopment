@@ -1,10 +1,12 @@
-<section class="section-pad">
+<section class="section-pad back-link-section">
 
   <a routerLink="/projects" class="back-link">
     <span class="material-symbols" style="padding-right:12px">chevron_backward</span>
     <span>Proiecte</span>
   </a>
+</section>
 
+<section class="section-pad">
 
   <div class="page-title">
     <h1>{{project?.name}}</h1>
@@ -16,7 +18,8 @@
 
 
 <div class="image-wrapper" [style.--img-url]="'url(' + project?.images + ')'">
-  <img [src]="project?.images" alt="{{ project?.name }}" class="image-foreground">
+  <img [src]="project?.images" alt="{{ project?.name }}" class="image-foreground" [class.tall]="isTall"
+    (load)="onImgLoad($event)">
 </div>
 
 <section class="section-pad">

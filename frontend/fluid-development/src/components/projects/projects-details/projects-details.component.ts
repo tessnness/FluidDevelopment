@@ -20,6 +20,8 @@ export class ProjectsDetailsComponent implements OnInit {
   slug: any;
   project: any;
 
+  isTall = false;
+
   constructor() { }
 
   ngOnInit() {
@@ -49,10 +51,16 @@ export class ProjectsDetailsComponent implements OnInit {
     })
   }
 
-  setCanonical(url: string){
+  onImgLoad(e: Event) {
+    const img = e.target as HTMLImageElement;
+    const ratio = img.naturalHeight / img.naturalWidth; 
+    this.isTall = ratio > 1.15;
+  }
+
+  setCanonical(url: string) {
     let link = document.querySelector(`link[rel='canonical']`) as HTMLLinkElement | null;
 
-    if(!link){
+    if (!link) {
       link = document.createElement('link');
       link.setAttribute('rel', 'canonical');
       document.head.appendChild(link);
