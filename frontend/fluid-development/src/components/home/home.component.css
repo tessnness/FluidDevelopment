@@ -121,6 +121,7 @@
 @media (max-width: 576px) {
     .partners-grid {
         flex-direction: column;
+        gap: 48px;
     }
 
     .contact-form-info {
