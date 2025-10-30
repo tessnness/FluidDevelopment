@@ -6,7 +6,7 @@
   </div>
 
   <div class="mt-2 text-muted">
-    Aici puteți descoperi proiectele încheiate și în desfășurare la care lucrăm.
+    Aici puteți descoperi proiectele încheiate și în desfășurare la care lucrăm
   </div>
 
   <div class="mt-2 project-filters">
@@ -42,7 +42,7 @@
 
       <div>
         <select [(ngModel)]="selectedLocation" class="form-control" name="selectedLocation">
-          <option [ngValue]="undefined">Locatie</option>
+          <option [ngValue]="undefined">Locație</option>
           @for (l of locations; track l) {
           <option [ngValue]="l">{{ l }}</option>
           }
