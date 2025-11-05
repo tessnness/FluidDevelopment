@@ -92,6 +92,10 @@
   select {
     min-width: 30px !important;
   }
+
+  .project-wrap{
+    gap: 10px;
+  }
 }
 
 .project-box img {
