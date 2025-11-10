@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
 
   @ViewChild('carousel', { static: true }) carousel!: ElementRef<HTMLElement>;
 
-  pauseMs = 2400;
+  pauseMs = 5000;
   smoothScroll = true;
   desktopItems = 3;
   mobileItems = 2;
